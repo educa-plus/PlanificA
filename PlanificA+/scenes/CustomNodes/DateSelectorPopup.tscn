@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://cgx0lne32pysq"]
+
+[ext_resource type="Script" uid="uid://jcf8nj755oyv" path="res://scenes/CustomNodes/date_selector_popup.gd" id="1_i8nwu"]
+[ext_resource type="Theme" uid="uid://ffjylg2o1cnn" path="res://_theme/icons_button.tres" id="2_oc5i4"]
+[ext_resource type="Texture2D" uid="uid://bmpfqylohcabx" path="res://_theme/_icons/chevron-left.png" id="3_oi2re"]
+[ext_resource type="Texture2D" uid="uid://c1oecrobttuwe" path="res://_theme/_icons/chevron-right.png" id="4_dev4f"]
+
+[node name="DateSelectorPopup" type="PopupPanel" unique_id=541158407]
+oversampling_override = 1.0
+size = Vector2i(137, 100)
+visible = true
+script = ExtResource("1_i8nwu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=676419505]
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 119.0
+offset_bottom = 82.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=616823695]
+layout_mode = 2
+
+[node name="previous_month" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=24484428]
+custom_minimum_size = Vector2(24, 32)
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("2_oc5i4")
+icon = ExtResource("3_oi2re")
+expand_icon = true
+
+[node name="MonthLabel" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=572954698]
+unique_name_in_owner = true
+layout_mode = 2
+text = "month"
+
+[node name="next_month" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1124087532]
+custom_minimum_size = Vector2(24, 32)
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("2_oc5i4")
+icon = ExtResource("4_dev4f")
+expand_icon = true
+
+[node name="MonthGridContainer" type="GridContainer" parent="VBoxContainer" unique_id=1055379802]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+columns = 7
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1947641887]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 18.0
+offset_right = -18.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[connection signal="about_to_popup" from="." to="." method="_on_about_to_popup"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/previous_month" to="." method="_on_previous_month_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/next_month" to="." method="_on_next_month_pressed"]

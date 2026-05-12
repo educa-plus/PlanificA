@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://5tptlskqi7qh"]
+
+[ext_resource type="Script" uid="uid://cmsqwxssnsupn" path="res://scenes/Agenda/agenda_case.gd" id="1_x6u4o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jshro"]
+
+[node name="AgendaCase" type="PanelContainer" unique_id=1058399402]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jshro")
+script = ExtResource("1_x6u4o")
+lines_visibles = true
+
+[node name="Heading" type="Label" parent="." unique_id=331003312]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Weekend Day"
+horizontal_alignment = 1
+
+[node name="PlanifTextEdit" type="TextEdit" parent="." unique_id=1305550699]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 12
+wrap_mode = 1
+scroll_fit_content_height = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=713961348]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 0
+
+[node name="PlanifRichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=853901990]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.2, 0.2, 0.2, 0.39215687)
+theme_override_constants/line_separation = 0
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 1

@@ -1,0 +1,192 @@
+[gd_scene format=3 uid="uid://kvb8s3daooh2"]
+
+[ext_resource type="Script" uid="uid://bu8j4x7kqthrc" path="res://scenes/Setter/free_day_setter.gd" id="1_y4421"]
+[ext_resource type="Script" uid="uid://mg46vy3m3rtb" path="res://scenes/Setter/error_label.gd" id="2_2geyt"]
+[ext_resource type="Theme" uid="uid://b0y6xcq1tdygf" path="res://_theme/button-primary.tres" id="2_j4rfq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j4rfq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2qf4u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2geyt"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 1, 1, 0.678431)
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="FreeDaySetter" type="Control" unique_id=1863377432]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 89.0
+offset_top = 77.0
+offset_right = -101.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_y4421")
+metadata/_edit_vertical_guides_ = [-512.0]
+
+[node name="BG" type="PanelContainer" parent="." unique_id=373302113]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -201.0
+offset_top = -67.5
+offset_right = 201.0
+offset_bottom = 67.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Everything" type="HBoxContainer" parent="BG" unique_id=805020270]
+layout_mode = 2
+alignment = 1
+
+[node name="FreeDaySelection" type="VBoxContainer" parent="BG/Everything" unique_id=1458779623]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="BG/Everything/FreeDaySelection" unique_id=454466405]
+layout_mode = 2
+theme_override_constants/separation = 4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_j4rfq")
+
+[node name="YearGrid" type="GridContainer" parent="BG/Everything/FreeDaySelection" unique_id=1541344676]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 4
+
+[node name="HSeparator" type="HSeparator" parent="BG/Everything/FreeDaySelection" unique_id=30564749]
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="BG/Everything/FreeDaySelection" unique_id=1141175224]
+layout_mode = 2
+
+[node name="Precedent" type="Button" parent="BG/Everything/FreeDaySelection/Buttons" unique_id=963924881]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("2_j4rfq")
+text = "Précédent"
+
+[node name="Suivant" type="Button" parent="BG/Everything/FreeDaySelection/Buttons" unique_id=1009790248]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("2_j4rfq")
+text = "Suivant"
+
+[node name="LegendMargin" type="MarginContainer" parent="BG/Everything" unique_id=1155368438]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="LegendContainer" type="PanelContainer" parent="BG/Everything/LegendMargin" unique_id=1155201842]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="LegendMargin" type="MarginContainer" parent="BG/Everything/LegendMargin/LegendContainer" unique_id=1008986211]
+layout_mode = 2
+
+[node name="Legend" type="VBoxContainer" parent="BG/Everything/LegendMargin/LegendContainer/LegendMargin" unique_id=618022596]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="BG/Everything/LegendMargin/LegendContainer/LegendMargin/Legend" unique_id=850202262]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Légende"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="BG/Everything/LegendMargin/LegendContainer/LegendMargin/Legend" unique_id=1032446003]
+layout_mode = 2
+theme_override_constants/separation = 8
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2qf4u")
+
+[node name="ErrorLabel" type="Label" parent="." unique_id=680772103]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_2geyt")
+text = "Placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_2geyt")
+
+[node name="WarningBox" type="PanelContainer" parent="." unique_id=2066996907]
+visible = false
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="WarningBox" unique_id=1197799946]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VboxContainer" type="VBoxContainer" parent="WarningBox/MarginContainer" unique_id=2045663054]
+layout_mode = 2
+
+[node name="WarningTitle" type="Label" parent="WarningBox/MarginContainer/VboxContainer" unique_id=1444210760]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Attention"
+horizontal_alignment = 1
+
+[node name="WarningMessageLabel" type="RichTextLabel" parent="WarningBox/MarginContainer/VboxContainer" unique_id=886824397]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="WarningBox/MarginContainer/VboxContainer" unique_id=1591485706]
+layout_mode = 2
+
+[node name="No" type="Button" parent="WarningBox/MarginContainer/VboxContainer/Buttons" unique_id=97158834]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("2_j4rfq")
+text = "Non"
+
+[node name="Yes" type="Button" parent="WarningBox/MarginContainer/VboxContainer/Buttons" unique_id=54593664]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("2_j4rfq")
+text = "Oui"
+
+[connection signal="pressed" from="BG/Everything/FreeDaySelection/Buttons/Precedent" to="." method="_on_precedent_pressed"]
+[connection signal="pressed" from="BG/Everything/FreeDaySelection/Buttons/Suivant" to="." method="_on_suivant_pressed"]

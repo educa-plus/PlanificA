@@ -1,0 +1,541 @@
+[gd_scene format=3 uid="uid://k77i1jp21dl2"]
+
+[ext_resource type="Script" uid="uid://p0mshw6qhjc2" path="res://scenes/Setter/timetable_setter.gd" id="1_ve56c"]
+[ext_resource type="Script" uid="uid://mg46vy3m3rtb" path="res://scenes/Setter/error_label.gd" id="2_umpww"]
+[ext_resource type="Script" uid="uid://c5pw5ld3tv2kc" path="res://scenes/Setter/time_modifier_panel.gd" id="3_hv7nd"]
+[ext_resource type="Texture2D" uid="uid://c13ie5mfoj85t" path="res://_theme/_assets/calendar-panel.png" id="3_wumcd"]
+[ext_resource type="Texture2D" uid="uid://bhxs20ay1k8jk" path="res://_theme/_icons/MinusIcon.png" id="4_fs1vy"]
+[ext_resource type="Theme" uid="uid://c7w1reucq2h0m" path="res://_theme/icon_desks.tres" id="5_6d6eb"]
+[ext_resource type="Texture2D" uid="uid://bx4af7mbugwid" path="res://_theme/_icons/PlusIcon.png" id="5_x3utx"]
+[ext_resource type="Texture2D" uid="uid://ck74w0ote1ndk" path="res://_theme/_icons/up_chevron-left.png" id="6_fs1vy"]
+[ext_resource type="Theme" uid="uid://ffjylg2o1cnn" path="res://_theme/icons_button.tres" id="6_x3utx"]
+[ext_resource type="Texture2D" uid="uid://dt6abita3n0kv" path="res://_theme/_icons/down_chevron-left.png" id="7_x3utx"]
+[ext_resource type="Texture2D" uid="uid://d3nn8umfnrkgc" path="res://_theme/_icons/XIcon.png" id="8_m5w32"]
+[ext_resource type="Theme" uid="uid://b0y6xcq1tdygf" path="res://_theme/button-primary.tres" id="9_mfi0y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umpww"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vpgy7"]
+texture = ExtResource("3_wumcd")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[node name="TimetableSetter" type="Control" unique_id=449958661]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ve56c")
+
+[node name="PreliminaryPanel" type="PanelContainer" parent="." unique_id=1093724329]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -334.0
+offset_top = -131.5
+offset_right = 334.0
+offset_bottom = 131.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PreliminaryMargin" type="MarginContainer" parent="PreliminaryPanel" unique_id=694678991]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="PreliminarySelector" type="VBoxContainer" parent="PreliminaryPanel/PreliminaryMargin" unique_id=1189116640]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Title" type="Label" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector" unique_id=187244840]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Planifions votre horaire !"
+horizontal_alignment = 1
+
+[node name="SchoolYearSelector" type="HBoxContainer" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector" unique_id=394215238]
+layout_mode = 2
+
+[node name="ShoolYearLabel" type="Label" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/SchoolYearSelector" unique_id=145335826]
+layout_mode = 2
+text = "Pour quelle année scolaire désirez-vous régler votre horaire ?"
+
+[node name="SchoolYear" type="OptionButton" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/SchoolYearSelector" unique_id=1251629764]
+layout_mode = 2
+size_flags_horizontal = 10
+mouse_default_cursor_shape = 2
+theme = ExtResource("9_mfi0y")
+
+[node name="NumTimetableSelector" type="HBoxContainer" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector" unique_id=385673077]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TimetableLabel" type="Label" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/NumTimetableSelector" unique_id=846385504]
+layout_mode = 2
+text = "Sur combien de jours votre cycle horaire est-il conçu ?"
+
+[node name="NumTimetable" type="OptionButton" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/NumTimetableSelector" unique_id=1557241859]
+layout_mode = 2
+size_flags_horizontal = 10
+mouse_default_cursor_shape = 2
+theme = ExtResource("9_mfi0y")
+item_count = 6
+popup/item_0/text = "6"
+popup/item_0/id = 0
+popup/item_1/text = "7"
+popup/item_1/id = 1
+popup/item_2/text = "9"
+popup/item_2/id = 2
+popup/item_3/text = "10"
+popup/item_3/id = 3
+popup/item_4/text = "15"
+popup/item_4/id = 4
+popup/item_5/text = "Autre"
+popup/item_5/id = 5
+
+[node name="NumPeriodSelector" type="HBoxContainer" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector" unique_id=1481389408]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PeriodLabel" type="Label" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/NumPeriodSelector" unique_id=921136792]
+layout_mode = 2
+text = "Combien y a-t-il de périodes dans une journée à votre école ?
+(Prenez en considération les périodes d'études)"
+
+[node name="NumPeriodAM" type="VBoxContainer" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/NumPeriodSelector" unique_id=561981488]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="AM" type="Label" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/NumPeriodSelector/NumPeriodAM" unique_id=1069164946]
+layout_mode = 2
+text = "AM"
+horizontal_alignment = 1
+
+[node name="NumPeriod" type="OptionButton" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/NumPeriodSelector/NumPeriodAM" unique_id=1144690567]
+layout_mode = 2
+size_flags_horizontal = 10
+mouse_default_cursor_shape = 2
+theme = ExtResource("9_mfi0y")
+item_count = 5
+popup/item_0/text = "1"
+popup/item_0/id = 1
+popup/item_1/text = "2"
+popup/item_1/id = 2
+popup/item_2/text = "3"
+popup/item_2/id = 3
+popup/item_3/text = "4"
+popup/item_3/id = 4
+popup/item_4/text = "5"
+popup/item_4/id = 5
+
+[node name="NumPeriodPM" type="VBoxContainer" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/NumPeriodSelector" unique_id=1806374283]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="PM" type="Label" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/NumPeriodSelector/NumPeriodPM" unique_id=1474424838]
+layout_mode = 2
+text = "PM"
+horizontal_alignment = 1
+
+[node name="NumPeriod" type="OptionButton" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/NumPeriodSelector/NumPeriodPM" unique_id=1769515787]
+layout_mode = 2
+size_flags_horizontal = 10
+mouse_default_cursor_shape = 2
+theme = ExtResource("9_mfi0y")
+item_count = 5
+popup/item_0/text = "1"
+popup/item_0/id = 1
+popup/item_1/text = "2"
+popup/item_1/id = 2
+popup/item_2/text = "3"
+popup/item_2/id = 3
+popup/item_3/text = "4"
+popup/item_3/id = 4
+popup/item_4/text = "5"
+popup/item_4/id = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector" unique_id=1195420134]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="GroupSelector" type="HBoxContainer" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/ScrollContainer" unique_id=1301946151]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="LabelsContainer" type="VBoxContainer" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/ScrollContainer/GroupSelector" unique_id=1279054791]
+layout_mode = 2
+
+[node name="GroupLabel" type="Label" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/ScrollContainer/GroupSelector/LabelsContainer" unique_id=749087592]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Quels sont vos groupes cette année ?"
+
+[node name="GroupLabelAvert" type="Label" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/ScrollContainer/GroupSelector/LabelsContainer" unique_id=1783622383]
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 0.300051, 0.236805, 1)
+theme_override_font_sizes/font_size = 12
+text = "(Il est recommandé de choisir des sigles qui permettent de distinguer les groupes.)"
+autowrap_mode = 2
+
+[node name="GroupNameSelector" type="VBoxContainer" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/ScrollContainer/GroupSelector" unique_id=587583745]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="GroupNameLabel" type="Label" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/ScrollContainer/GroupSelector/GroupNameSelector" unique_id=1778011722]
+layout_mode = 2
+text = "Sigle"
+horizontal_alignment = 1
+
+[node name="Group1" type="LineEdit" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/ScrollContainer/GroupSelector/GroupNameSelector" unique_id=255787653]
+layout_mode = 2
+max_length = 8
+
+[node name="ButtonContainer" type="HBoxContainer" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/ScrollContainer/GroupSelector/GroupNameSelector" unique_id=554771359]
+layout_mode = 2
+
+[node name="DeleteGroup" type="Button" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/ScrollContainer/GroupSelector/GroupNameSelector/ButtonContainer" unique_id=1639534981]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("5_6d6eb")
+icon = ExtResource("4_fs1vy")
+icon_alignment = 1
+expand_icon = true
+
+[node name="NewGroup" type="Button" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/ScrollContainer/GroupSelector/GroupNameSelector/ButtonContainer" unique_id=646074925]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("5_6d6eb")
+icon = ExtResource("5_x3utx")
+icon_alignment = 1
+expand_icon = true
+
+[node name="GroupLevelSelector" type="VBoxContainer" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/ScrollContainer/GroupSelector" unique_id=724614012]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+alignment = 1
+
+[node name="GroupLevel" type="Label" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/ScrollContainer/GroupSelector/GroupLevelSelector" unique_id=1956099326]
+layout_mode = 2
+text = "Niveau"
+horizontal_alignment = 1
+
+[node name="Group1" type="OptionButton" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/ScrollContainer/GroupSelector/GroupLevelSelector" unique_id=323823989]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("9_mfi0y")
+
+[node name="GroupYearSelector" type="VBoxContainer" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/ScrollContainer/GroupSelector" unique_id=450908450]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+alignment = 1
+
+[node name="GroupYear" type="Label" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/ScrollContainer/GroupSelector/GroupYearSelector" unique_id=322498176]
+layout_mode = 2
+text = "Année"
+horizontal_alignment = 1
+
+[node name="Group1" type="OptionButton" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/ScrollContainer/GroupSelector/GroupYearSelector" unique_id=1033111731]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("9_mfi0y")
+item_count = 1
+popup/item_0/text = " "
+popup/item_0/id = 0
+
+[node name="GroupSubjectSelector" type="VBoxContainer" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/ScrollContainer/GroupSelector" unique_id=1350644183]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+alignment = 1
+
+[node name="GroupSubject" type="Label" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/ScrollContainer/GroupSelector/GroupSubjectSelector" unique_id=587629896]
+layout_mode = 2
+text = "Discipline"
+horizontal_alignment = 1
+
+[node name="Group1" type="OptionButton" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/ScrollContainer/GroupSelector/GroupSubjectSelector" unique_id=1933729490]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("9_mfi0y")
+item_count = 1
+popup/item_0/text = " "
+popup/item_0/id = 0
+
+[node name="NextButton" type="Button" parent="PreliminaryPanel/PreliminaryMargin/PreliminarySelector" unique_id=1662124308]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("9_mfi0y")
+text = "Suivant"
+
+[node name="PreliminaryPanelCloseButton" type="Button" parent="PreliminaryPanel" unique_id=1338348335]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("6_x3utx")
+icon = ExtResource("8_m5w32")
+expand_icon = true
+
+[node name="TimetableScrollContainer" type="ScrollContainer" parent="." unique_id=756476497]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AdaptableTimetable" type="PanelContainer" parent="TimetableScrollContainer" unique_id=1435530664]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="TimetableMargin" type="MarginContainer" parent="TimetableScrollContainer/AdaptableTimetable" unique_id=1098203022]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TimetableScrollContainer/AdaptableTimetable/TimetableMargin" unique_id=707791483]
+layout_mode = 2
+
+[node name="TimeTable" type="HBoxContainer" parent="TimetableScrollContainer/AdaptableTimetable/TimetableMargin/VBoxContainer" unique_id=302762653]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="StepsButton" type="HBoxContainer" parent="TimetableScrollContainer/AdaptableTimetable/TimetableMargin/VBoxContainer" unique_id=1523320773]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="TimetableScrollContainer/AdaptableTimetable/TimetableMargin/VBoxContainer/StepsButton" unique_id=416782144]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("9_mfi0y")
+text = "Précédent"
+
+[node name="Next" type="Button" parent="TimetableScrollContainer/AdaptableTimetable/TimetableMargin/VBoxContainer/StepsButton" unique_id=1012470595]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+mouse_default_cursor_shape = 2
+theme = ExtResource("9_mfi0y")
+text = "Suivant"
+
+[node name="PreliminaryPanelCloseButton" type="Button" parent="TimetableScrollContainer/AdaptableTimetable" unique_id=271211362]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("6_x3utx")
+icon = ExtResource("8_m5w32")
+expand_icon = true
+
+[node name="ErrorLabel" type="Label" parent="." unique_id=1347301247]
+visible = false
+layout_mode = 1
+offset_left = 54.0
+offset_top = -19.0
+offset_right = 191.0
+offset_bottom = 37.0
+theme_override_colors/font_color = Color(1, 0.3241, 0.258944, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_umpww")
+text = "placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_umpww")
+
+[node name="TimeModifierPanel" type="PanelContainer" parent="." unique_id=613269953]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.5
+offset_top = -64.0
+offset_right = 52.5
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_vpgy7")
+script = ExtResource("3_hv7nd")
+
+[node name="TimeModifierMargin" type="MarginContainer" parent="TimeModifierPanel" unique_id=479025252]
+layout_mode = 2
+theme_override_constants/margin_left = -6
+theme_override_constants/margin_top = -12
+theme_override_constants/margin_right = -6
+theme_override_constants/margin_bottom = -12
+
+[node name="TimeModifier" type="VBoxContainer" parent="TimeModifierPanel/TimeModifierMargin" unique_id=1832721726]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="UpButton" type="HBoxContainer" parent="TimeModifierPanel/TimeModifierMargin/TimeModifier" unique_id=1919299982]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="UpHour" type="Button" parent="TimeModifierPanel/TimeModifierMargin/TimeModifier/UpButton" unique_id=1050442964]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("5_6d6eb")
+icon = ExtResource("6_fs1vy")
+expand_icon = true
+
+[node name="UpHourRepeatTimer" type="Timer" parent="TimeModifierPanel/TimeModifierMargin/TimeModifier/UpButton" unique_id=1001515291]
+
+[node name="UpMinute" type="Button" parent="TimeModifierPanel/TimeModifierMargin/TimeModifier/UpButton" unique_id=275091735]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 10
+mouse_default_cursor_shape = 2
+theme = ExtResource("5_6d6eb")
+icon = ExtResource("6_fs1vy")
+expand_icon = true
+
+[node name="UpMinuteRepeatTimer" type="Timer" parent="TimeModifierPanel/TimeModifierMargin/TimeModifier/UpButton" unique_id=738320142]
+
+[node name="Time" type="MarginContainer" parent="TimeModifierPanel/TimeModifierMargin/TimeModifier" unique_id=1665394029]
+layout_mode = 2
+theme_override_constants/margin_left = -2
+theme_override_constants/margin_right = -2
+
+[node name="Time" type="HBoxContainer" parent="TimeModifierPanel/TimeModifierMargin/TimeModifier/Time" unique_id=1412433409]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HourEdit" type="TextEdit" parent="TimeModifierPanel/TimeModifierMargin/TimeModifier/Time/Time" unique_id=1792949964]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(34, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+text = "01"
+scroll_fit_content_height = true
+
+[node name="Hour" type="Label" parent="TimeModifierPanel/TimeModifierMargin/TimeModifier/Time/Time" unique_id=1507776234]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 2
+text = "01"
+horizontal_alignment = 1
+
+[node name="Between" type="Label" parent="TimeModifierPanel/TimeModifierMargin/TimeModifier/Time/Time" unique_id=304153485]
+layout_mode = 2
+size_flags_horizontal = 6
+text = ":"
+horizontal_alignment = 1
+
+[node name="Minute" type="Label" parent="TimeModifierPanel/TimeModifierMargin/TimeModifier/Time/Time" unique_id=348384012]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 10
+text = "01"
+horizontal_alignment = 1
+
+[node name="HourEdit2" type="TextEdit" parent="TimeModifierPanel/TimeModifierMargin/TimeModifier/Time/Time" unique_id=582016766]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(34, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+text = "01"
+scroll_fit_content_height = true
+
+[node name="DownButton" type="HBoxContainer" parent="TimeModifierPanel/TimeModifierMargin/TimeModifier" unique_id=499580642]
+layout_mode = 2
+
+[node name="DownHour" type="Button" parent="TimeModifierPanel/TimeModifierMargin/TimeModifier/DownButton" unique_id=613764697]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("5_6d6eb")
+icon = ExtResource("7_x3utx")
+expand_icon = true
+
+[node name="DownHourRepeatTimer" type="Timer" parent="TimeModifierPanel/TimeModifierMargin/TimeModifier/DownButton" unique_id=1841736878]
+
+[node name="DownMinute" type="Button" parent="TimeModifierPanel/TimeModifierMargin/TimeModifier/DownButton" unique_id=728991882]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 10
+mouse_default_cursor_shape = 2
+theme = ExtResource("5_6d6eb")
+icon = ExtResource("7_x3utx")
+expand_icon = true
+
+[node name="DownMinuteRepeatTimer" type="Timer" parent="TimeModifierPanel/TimeModifierMargin/TimeModifier/DownButton" unique_id=151662660]
+
+[node name="Steps" type="HBoxContainer" parent="TimeModifierPanel/TimeModifierMargin/TimeModifier" unique_id=529482139]
+layout_mode = 2
+
+[node name="Next" type="Button" parent="TimeModifierPanel/TimeModifierMargin/TimeModifier/Steps" unique_id=1569901732]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme = ExtResource("9_mfi0y")
+text = "ok"
+
+[node name="Control" type="Control" parent="TimeModifierPanel/TimeModifierMargin" unique_id=95792682]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Back" type="Button" parent="TimeModifierPanel/TimeModifierMargin/Control" unique_id=389721631]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 4.5
+offset_top = -18.0
+offset_right = 24.5
+offset_bottom = 2.0
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme = ExtResource("5_6d6eb")
+icon = ExtResource("8_m5w32")
+expand_icon = true
+
+[connection signal="pressed" from="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/ScrollContainer/GroupSelector/GroupNameSelector/ButtonContainer/DeleteGroup" to="." method="_on_delete_group_pressed"]
+[connection signal="pressed" from="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/ScrollContainer/GroupSelector/GroupNameSelector/ButtonContainer/NewGroup" to="." method="_on_new_group_pressed"]
+[connection signal="pressed" from="PreliminaryPanel/PreliminaryMargin/PreliminarySelector/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="PreliminaryPanel/PreliminaryPanelCloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="TimetableScrollContainer/AdaptableTimetable/TimetableMargin/VBoxContainer/StepsButton/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="TimetableScrollContainer/AdaptableTimetable/TimetableMargin/VBoxContainer/StepsButton/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="TimetableScrollContainer/AdaptableTimetable/PreliminaryPanelCloseButton" to="." method="_on_close_button_pressed"]

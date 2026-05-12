@@ -1,0 +1,401 @@
+[gd_scene format=3 uid="uid://cd0la4ptamb3p"]
+
+[ext_resource type="Script" uid="uid://baxgl3wleor7h" path="res://scenes/Parameter/parameter_scene.gd" id="1_at4x5"]
+[ext_resource type="Theme" uid="uid://0gki84xv0et2" path="res://_theme/button-calendar-blue.tres" id="2_uawse"]
+[ext_resource type="Texture2D" uid="uid://d3nn8umfnrkgc" path="res://_theme/_icons/XIcon.png" id="3_8kt4q"]
+[ext_resource type="Theme" uid="uid://c0otkkwlovu26" path="res://_theme/button-calendar-green.tres" id="3_ja68c"]
+[ext_resource type="Theme" uid="uid://dwqdrh04i3hb1" path="res://_theme/button-calendar-purple.tres" id="4_3rnj8"]
+[ext_resource type="Theme" uid="uid://cym4ia03227u" path="res://_theme/button-calendar-red.tres" id="5_1k1hi"]
+[ext_resource type="Theme" uid="uid://ba84kgn72i5o" path="res://_theme/button-calendar-yellow.tres" id="6_t4y5x"]
+[ext_resource type="Theme" uid="uid://b0y6xcq1tdygf" path="res://_theme/button-primary.tres" id="7_ja68c"]
+[ext_resource type="Theme" uid="uid://ffjylg2o1cnn" path="res://_theme/icons_button.tres" id="8_ja68c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uktrg"]
+
+[node name="Parameter" type="Control" unique_id=1065553978]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_at4x5")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=2029030731]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=290931229]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Parameter" type="HBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1214643160]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ParameterCategory" type="VBoxContainer" parent="PanelContainer/MarginContainer/Parameter" unique_id=2023246982]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Heading" type="Label" parent="PanelContainer/MarginContainer/Parameter/ParameterCategory" unique_id=637507012]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Paramètres"
+
+[node name="General" type="Button" parent="PanelContainer/MarginContainer/Parameter/ParameterCategory" unique_id=1088946477 groups=["CategoryButton"]]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_uawse")
+theme_override_font_sizes/font_size = 14
+toggle_mode = true
+text = "Général"
+alignment = 0
+
+[node name="Agenda" type="Button" parent="PanelContainer/MarginContainer/Parameter/ParameterCategory" unique_id=283013528 groups=["CategoryButton"]]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_ja68c")
+theme_override_font_sizes/font_size = 14
+toggle_mode = true
+text = "Agenda"
+alignment = 0
+
+[node name="Planification" type="Button" parent="PanelContainer/MarginContainer/Parameter/ParameterCategory" unique_id=1304847915 groups=["CategoryButton"]]
+visible = false
+layout_mode = 2
+theme = ExtResource("4_3rnj8")
+theme_override_font_sizes/font_size = 14
+toggle_mode = true
+text = "Planification"
+alignment = 0
+
+[node name="Look" type="Button" parent="PanelContainer/MarginContainer/Parameter/ParameterCategory" unique_id=2082943577 groups=["CategoryButton"]]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("5_1k1hi")
+theme_override_font_sizes/font_size = 14
+toggle_mode = true
+text = "Apparence"
+alignment = 0
+
+[node name="Tutorial" type="Button" parent="PanelContainer/MarginContainer/Parameter/ParameterCategory" unique_id=1506100276 groups=["CategoryButton"]]
+visible = false
+layout_mode = 2
+theme = ExtResource("6_t4y5x")
+theme_override_font_sizes/font_size = 14
+toggle_mode = true
+text = "Tutoriel "
+alignment = 0
+
+[node name="VSeparator" type="VSeparator" parent="PanelContainer/MarginContainer/Parameter" unique_id=1751994204]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="OptionsMargin" type="MarginContainer" parent="PanelContainer/MarginContainer/Parameter" unique_id=855689557]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 24
+
+[node name="General" type="VBoxContainer" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin" unique_id=525819523 groups=["CategoryParameter"]]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Heading" type="Label" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/General" unique_id=228882754]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Général"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/General" unique_id=108518981]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxFlat_uktrg")
+
+[node name="Screen" type="HBoxContainer" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/General" unique_id=434791682]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/General/Screen" unique_id=2044660051]
+layout_mode = 2
+text = "Disposition de la fenêtre"
+
+[node name="ScreenSizeSelector" type="OptionButton" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/General/Screen" unique_id=1035035420]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("7_ja68c")
+selected = 1
+item_count = 2
+popup/item_0/text = "Plein écran"
+popup/item_0/id = 0
+popup/item_1/text = "Minimale"
+popup/item_1/id = 1
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/General" unique_id=1287333516]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Language" type="HBoxContainer" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/General" unique_id=567186796]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/General/Language" unique_id=474775884]
+layout_mode = 2
+text = "Langue"
+
+[node name="LanguageSelector" type="OptionButton" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/General/Language" unique_id=16685712]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+mouse_default_cursor_shape = 2
+theme = ExtResource("7_ja68c")
+selected = 0
+item_count = 1
+popup/item_0/text = "Français"
+popup/item_0/id = 0
+
+[node name="HSeparator3" type="HSeparator" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/General" unique_id=1805101766]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Selecteur_de_couleur complexe" type="HBoxContainer" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/General" unique_id=536848189]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/General/Selecteur_de_couleur complexe" unique_id=454974297]
+layout_mode = 2
+text = "Sélecteur de couleur complexe"
+
+[node name="ComplexColorSelector" type="CheckButton" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/General/Selecteur_de_couleur complexe" unique_id=2105896946]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+mouse_default_cursor_shape = 2
+theme = ExtResource("7_ja68c")
+flat = true
+
+[node name="HSeparator4" type="HSeparator" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/General" unique_id=580550744]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Web" type="HBoxContainer" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/General" unique_id=1914788163]
+layout_mode = 2
+
+[node name="GoToWebsite" type="Button" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/General/Web" unique_id=1215735868]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+mouse_default_cursor_shape = 2
+theme = ExtResource("7_ja68c")
+text = "Visiter le site web"
+
+[node name="Agenda" type="VBoxContainer" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin" unique_id=991470997 groups=["CategoryParameter"]]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Heading" type="Label" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Agenda" unique_id=1342969169]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Agenda"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Agenda" unique_id=1062321855]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxFlat_uktrg")
+
+[node name="Title" type="HBoxContainer" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Agenda" unique_id=1557519766]
+layout_mode = 2
+theme = ExtResource("7_ja68c")
+
+[node name="SubHeading" type="Label" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Agenda/Title" unique_id=829904228]
+layout_mode = 2
+text = "Montrer les titres"
+
+[node name="ShowTitleSelector" type="CheckButton" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Agenda/Title" unique_id=1965342692]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+mouse_default_cursor_shape = 2
+button_pressed = true
+flat = true
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Agenda" unique_id=166405907]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Morning" type="HBoxContainer" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Agenda" unique_id=764922]
+layout_mode = 2
+theme = ExtResource("7_ja68c")
+
+[node name="SubHeading" type="Label" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Agenda/Morning" unique_id=625524118]
+layout_mode = 2
+text = "Case pour le matin"
+
+[node name="ShowMorningSelector" type="CheckButton" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Agenda/Morning" unique_id=437051892]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+mouse_default_cursor_shape = 2
+button_pressed = true
+flat = true
+
+[node name="HSeparator3" type="HSeparator" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Agenda" unique_id=45030192]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Noon" type="HBoxContainer" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Agenda" unique_id=1874695731]
+layout_mode = 2
+theme = ExtResource("7_ja68c")
+
+[node name="SubHeading" type="Label" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Agenda/Noon" unique_id=234907561]
+layout_mode = 2
+text = "Case pour le midi"
+
+[node name="ShowNoonSelector" type="CheckButton" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Agenda/Noon" unique_id=1243421905]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+mouse_default_cursor_shape = 2
+button_pressed = true
+flat = true
+
+[node name="HSeparator4" type="HSeparator" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Agenda" unique_id=294357217]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Evening" type="HBoxContainer" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Agenda" unique_id=1576786412]
+layout_mode = 2
+theme = ExtResource("7_ja68c")
+
+[node name="SubHeading" type="Label" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Agenda/Evening" unique_id=800368985]
+layout_mode = 2
+text = "Case pour le midi"
+
+[node name="ShowEveningSelector" type="CheckButton" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Agenda/Evening" unique_id=1031796263]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+mouse_default_cursor_shape = 2
+button_pressed = true
+flat = true
+
+[node name="Planification" type="VBoxContainer" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin" unique_id=1679837100 groups=["CategoryParameter"]]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Heading" type="Label" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Planification" unique_id=1974554860]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Planification"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Planification" unique_id=442589797]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxFlat_uktrg")
+
+[node name="Resume" type="HBoxContainer" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Planification" unique_id=531447832]
+layout_mode = 2
+
+[node name="SubHeading" type="Label" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Planification/Resume" unique_id=619297772]
+layout_mode = 2
+text = "Générer des résumés par IA"
+
+[node name="AIResumeSelector" type="CheckButton" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Planification/Resume" unique_id=1287499703]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("7_ja68c")
+flat = true
+
+[node name="Look" type="VBoxContainer" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin" unique_id=326425720 groups=["CategoryParameter"]]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Heading" type="Label" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Look" unique_id=2131789320]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Apparence"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Look" unique_id=556062257]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxFlat_uktrg")
+
+[node name="Theme" type="HBoxContainer" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Look" unique_id=443036570]
+layout_mode = 2
+
+[node name="SubHeading" type="Label" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Look/Theme" unique_id=1580562392]
+layout_mode = 2
+text = "Thème"
+
+[node name="ThemeSelector" type="OptionButton" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Look/Theme" unique_id=365879295]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+mouse_default_cursor_shape = 2
+theme = ExtResource("7_ja68c")
+selected = 0
+item_count = 1
+popup/item_0/text = "PlanificA+ clair"
+popup/item_0/id = 0
+
+[node name="Tutorial" type="VBoxContainer" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin" unique_id=1782751612 groups=["CategoryParameter"]]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Heading" type="Label" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Tutorial" unique_id=1434760722]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Tutoriel"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Tutorial" unique_id=1315749064]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxFlat_uktrg")
+
+[node name="Tutorial" type="HBoxContainer" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Tutorial" unique_id=2071336903]
+layout_mode = 2
+
+[node name="RedoTuTo" type="Button" parent="PanelContainer/MarginContainer/Parameter/OptionsMargin/Tutorial/Tutorial" unique_id=957379094]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme = ExtResource("7_ja68c")
+text = "Refaire le tutoriel"
+
+[node name="X" type="Button" parent="PanelContainer" unique_id=814598313]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("8_ja68c")
+icon = ExtResource("3_8kt4q")
+expand_icon = true
+
+[connection signal="item_selected" from="PanelContainer/MarginContainer/Parameter/OptionsMargin/General/Screen/ScreenSizeSelector" to="." method="_on_screen_size_selector_item_selected"]
+[connection signal="toggled" from="PanelContainer/MarginContainer/Parameter/OptionsMargin/General/Selecteur_de_couleur complexe/ComplexColorSelector" to="." method="_on_complex_color_selector_toggled"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Parameter/OptionsMargin/General/Web/GoToWebsite" to="." method="_on_go_to_website_pressed"]
+[connection signal="toggled" from="PanelContainer/MarginContainer/Parameter/OptionsMargin/Agenda/Title/ShowTitleSelector" to="." method="_on_show_title_selector_toggled"]
+[connection signal="toggled" from="PanelContainer/MarginContainer/Parameter/OptionsMargin/Agenda/Morning/ShowMorningSelector" to="." method="_on_show_morning_selector_toggled"]
+[connection signal="toggled" from="PanelContainer/MarginContainer/Parameter/OptionsMargin/Agenda/Noon/ShowNoonSelector" to="." method="_on_show_noon_selector_toggled"]
+[connection signal="toggled" from="PanelContainer/MarginContainer/Parameter/OptionsMargin/Agenda/Evening/ShowEveningSelector" to="." method="_on_show_evening_selector_toggled"]
+[connection signal="toggled" from="PanelContainer/MarginContainer/Parameter/OptionsMargin/Planification/Resume/AIResumeSelector" to="." method="_on_ai_resume_selector_toggled"]
+[connection signal="pressed" from="PanelContainer/X" to="." method="_on_x_pressed"]

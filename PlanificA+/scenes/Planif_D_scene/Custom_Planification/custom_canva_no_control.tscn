@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bhnv4h6m0nuix"]
+
+[ext_resource type="Script" uid="uid://duuopk3j8renc" path="res://scenes/Planif_D_scene/Custom_Planification/custom_canva.gd" id="1_72250"]
+[ext_resource type="Theme" uid="uid://c7w1reucq2h0m" path="res://_theme/icon_desks.tres" id="3_qsr4j"]
+[ext_resource type="Texture2D" uid="uid://bx4af7mbugwid" path="res://_theme/_icons/PlusIcon.png" id="4_l64dj"]
+
+[node name="VBigBox" type="VBoxContainer" unique_id=932717616]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 4.0
+grow_horizontal = 2
+script = ExtResource("1_72250")
+
+[node name="ExternalPlus" type="Button" parent="." unique_id=1401608233 groups=["exterior_plus_buttons_v"]]
+layout_mode = 2
+theme = ExtResource("3_qsr4j")
+icon = ExtResource("4_l64dj")
+icon_alignment = 1
+expand_icon = true

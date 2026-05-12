@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TutorialStepData" format=3 uid="uid://23wua8h48jhh"]
+
+[ext_resource type="Script" uid="uid://j23ms4k1w07v" path="res://Tutorial/tutorial_step_resource.gd" id="1_gcxqa"]
+
+[resource]
+script = ExtResource("1_gcxqa")
+tutorial_text_indication = "Si vous le voulez, je peux vous accompagner pendant que vous générez votre agenda. Cela prendra entre 5 et 10 minutes. Vous aurez besoin de votre horaire cycle et de votre calendrier scolaire."
+rbutton_text = "Je le ferai plus tard"
+tutorial_node_name = "DemoFoldableContainer"
+trigger_node_name = "TutoRButton"
+is_shader_circular = false
+metadata/_custom_type_script = "uid://j23ms4k1w07v"

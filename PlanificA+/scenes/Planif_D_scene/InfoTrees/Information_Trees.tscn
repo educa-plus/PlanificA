@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://dksp5hwb6rmr8"]
+
+[ext_resource type="Script" uid="uid://qnxaraqq6yoh" path="res://scenes/Planif_D_scene/InfoTrees/information_trees.gd" id="1_ot7aa"]
+[ext_resource type="Theme" uid="uid://b0y6xcq1tdygf" path="res://_theme/button-primary.tres" id="2_bds8d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bds8d"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="Information_Trees" type="Control" unique_id=1220496740]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_ot7aa")
+
+[node name="TreesAndCanva" type="VBoxContainer" parent="." unique_id=454337764]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Trees" type="HBoxContainer" parent="TreesAndCanva" unique_id=2003889142]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 2
+
+[node name="InfoBar" type="MarginContainer" parent="TreesAndCanva/Trees" unique_id=1820074274]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 0
+
+[node name="RessourcesAndButton" type="HBoxContainer" parent="TreesAndCanva/Trees/InfoBar" unique_id=1377311170]
+layout_mode = 2
+
+[node name="ExtendButton" type="Button" parent="TreesAndCanva/Trees/InfoBar/RessourcesAndButton" unique_id=632434216]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = ">>"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TreesAndCanva/Trees/InfoBar/RessourcesAndButton" unique_id=1865669511]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Ressources" type="VBoxContainer" parent="TreesAndCanva/Trees/InfoBar/RessourcesAndButton/ScrollContainer" unique_id=2100328570]
+clip_contents = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 1
+
+[node name="SearchBar" type="LineEdit" parent="TreesAndCanva/Trees/InfoBar/RessourcesAndButton/ScrollContainer/Ressources" unique_id=1243199042]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Taper pour rechercher..."
+
+[node name="ResultPanel" type="PanelContainer" parent="TreesAndCanva/Trees/InfoBar/RessourcesAndButton/ScrollContainer/Ressources" unique_id=1011590634]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bds8d")
+
+[node name="SearchResults" type="VBoxContainer" parent="TreesAndCanva/Trees/InfoBar/RessourcesAndButton/ScrollContainer/Ressources/ResultPanel" unique_id=1206034377]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HSeparator6" type="HSeparator" parent="TreesAndCanva/Trees/InfoBar/RessourcesAndButton/ScrollContainer/Ressources" unique_id=2017789207 groups=["TreeSeparator"]]
+layout_mode = 2
+
+[node name="Notions" type="Tree" parent="TreesAndCanva/Trees/InfoBar/RessourcesAndButton/ScrollContainer/Ressources" unique_id=331878723 groups=["InfoTrees"]]
+layout_mode = 2
+size_flags_vertical = 0
+column_titles_visible = true
+hide_root = true
+
+[node name="HSeparator" type="HSeparator" parent="TreesAndCanva/Trees/InfoBar/RessourcesAndButton/ScrollContainer/Ressources" unique_id=1493196059 groups=["TreeSeparator"]]
+layout_mode = 2
+
+[node name="PFEQ" type="Tree" parent="TreesAndCanva/Trees/InfoBar/RessourcesAndButton/ScrollContainer/Ressources" unique_id=2065421977 groups=["InfoTrees"]]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="TreesAndCanva/Trees/InfoBar/RessourcesAndButton/ScrollContainer/Ressources" unique_id=1449490147 groups=["TreeSeparator"]]
+layout_mode = 2
+
+[node name="Matériel" type="Tree" parent="TreesAndCanva/Trees/InfoBar/RessourcesAndButton/ScrollContainer/Ressources" unique_id=1350696280 groups=["InfoTrees"]]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="TreesAndCanva/Trees/InfoBar/RessourcesAndButton/ScrollContainer/Ressources" unique_id=1942087434 groups=["TreeSeparator"]]
+layout_mode = 2
+
+[node name="Stratégie" type="Tree" parent="TreesAndCanva/Trees/InfoBar/RessourcesAndButton/ScrollContainer/Ressources" unique_id=1676192654 groups=["InfoTrees"]]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="TreesAndCanva/Trees/InfoBar/RessourcesAndButton/ScrollContainer/Ressources" unique_id=1165006972 groups=["TreeSeparator"]]
+visible = false
+layout_mode = 2
+
+[node name="Consignes" type="Tree" parent="TreesAndCanva/Trees/InfoBar/RessourcesAndButton/ScrollContainer/Ressources" unique_id=1838615434]
+visible = false
+layout_mode = 2
+
+[node name="HSeparator5" type="HSeparator" parent="TreesAndCanva/Trees/InfoBar/RessourcesAndButton/ScrollContainer/Ressources" unique_id=1474574019 groups=["TreeSeparator"]]
+visible = false
+layout_mode = 2
+
+[node name="Personnalisé" type="Tree" parent="TreesAndCanva/Trees/InfoBar/RessourcesAndButton/ScrollContainer/Ressources" unique_id=1183356468]
+visible = false
+layout_mode = 2
+
+[node name="PersonalCanva" type="PanelContainer" parent="TreesAndCanva" unique_id=47415231]
+layout_mode = 2
+
+[node name="CanvaVbox" type="VBoxContainer" parent="TreesAndCanva/PersonalCanva" unique_id=1235709194]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="TreesAndCanva/PersonalCanva/CanvaVbox" unique_id=972251684]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Gabarits personnels"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TreesAndCanva/PersonalCanva/CanvaVbox" unique_id=1281398576]
+custom_minimum_size = Vector2(0, 140)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TreesAndCanva/PersonalCanva/CanvaVbox/ScrollContainer" unique_id=1446205032]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AddCanva" type="Button" parent="TreesAndCanva/PersonalCanva/CanvaVbox" unique_id=199522546]
+layout_mode = 2
+size_flags_vertical = 10
+theme = ExtResource("2_bds8d")
+text = "Ajouter gabarit"
+
+[connection signal="text_changed" from="TreesAndCanva/Trees/InfoBar/RessourcesAndButton/ScrollContainer/Ressources/SearchBar" to="." method="_on_search_bar_text_changed"]
+[connection signal="pressed" from="TreesAndCanva/PersonalCanva/CanvaVbox/AddCanva" to="." method="_on_add_canva_pressed"]

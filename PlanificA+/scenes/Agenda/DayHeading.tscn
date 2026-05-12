@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://yhusnleupg04"]
+
+[ext_resource type="Script" uid="uid://n2pjufmdlxec" path="res://scenes/Agenda/day_heading.gd" id="1_ylqmy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ylqmy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6xp4d"]
+
+[node name="DayHeading" type="VBoxContainer" unique_id=1836802603]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 59.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_ylqmy")
+
+[node name="DateLabel" type="Label" parent="." unique_id=1454047397]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 16
+text = "Date"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScheduleLabel" type="Label" parent="." unique_id=2113726423]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "schedule"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=818707844]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="LVSeparator" type="VSeparator" parent="HBoxContainer" unique_id=941311749]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 48
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ylqmy")
+
+[node name="TaskButton" type="Button" parent="HBoxContainer" unique_id=1025977741]
+unique_name_in_owner = true
+z_index = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 10
+alignment = 0
+
+[node name="TaskPopupMenu" type="PopupMenu" parent="HBoxContainer/TaskButton" unique_id=1367785611]
+unique_name_in_owner = true
+oversampling_override = 1.0
+size = Vector2i(115, 152)
+item_count = 1
+item_0/text = "Tâche 1"
+item_0/checkable = 1
+item_0/id = 0
+
+[node name="RVSeparator" type="VSeparator" parent="HBoxContainer" unique_id=929817924]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 40
+theme_override_styles/separator = SubResource("StyleBoxEmpty_6xp4d")
+
+[connection signal="pressed" from="HBoxContainer/TaskButton" to="." method="_on_task_button_pressed"]

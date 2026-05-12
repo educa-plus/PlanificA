@@ -1,0 +1,127 @@
+[gd_scene load_steps=6 format=3 uid="uid://kvb8s3daooh2"]
+
+[ext_resource type="Script" uid="uid://bu8j4x7kqthrc" path="res://scenes/Setter/free_day_setter.gd" id="1_y4421"]
+[ext_resource type="Script" uid="uid://mg46vy3m3rtb" path="res://scenes/Setter/error_label.gd" id="2_2geyt"]
+[ext_resource type="Theme" uid="uid://b0y6xcq1tdygf" path="res://_theme/button-primary.tres" id="2_j4rfq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j4rfq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2geyt"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 1, 1, 0.678431)
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="FreeDaySetter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 89.0
+offset_top = 77.0
+offset_right = -101.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_y4421")
+metadata/_edit_vertical_guides_ = [-512.0]
+
+[node name="BG" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -201.0
+offset_top = -67.5
+offset_right = 201.0
+offset_bottom = 67.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Everything" type="HBoxContainer" parent="BG"]
+layout_mode = 2
+alignment = 1
+
+[node name="FreeDaySelection" type="VBoxContainer" parent="BG/Everything"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="BG/Everything/FreeDaySelection"]
+layout_mode = 2
+theme_override_constants/separation = 4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_j4rfq")
+
+[node name="YearGrid" type="GridContainer" parent="BG/Everything/FreeDaySelection"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 4
+
+[node name="HSeparator" type="HSeparator" parent="BG/Everything/FreeDaySelection"]
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="BG/Everything/FreeDaySelection"]
+layout_mode = 2
+
+[node name="Precedent" type="Button" parent="BG/Everything/FreeDaySelection/Buttons"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("2_j4rfq")
+text = "Précédent"
+
+[node name="Suivant" type="Button" parent="BG/Everything/FreeDaySelection/Buttons"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("2_j4rfq")
+text = "Suivant"
+
+[node name="LegendMargin" type="MarginContainer" parent="BG/Everything"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="LegendContainer" type="PanelContainer" parent="BG/Everything/LegendMargin"]
+layout_mode = 2
+
+[node name="LegendMargin" type="MarginContainer" parent="BG/Everything/LegendMargin/LegendContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Legend" type="VBoxContainer" parent="BG/Everything/LegendMargin/LegendContainer/LegendMargin"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="BG/Everything/LegendMargin/LegendContainer/LegendMargin/Legend"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Légende"
+
+[node name="ErrorLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_2geyt")
+text = "Placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_2geyt")
+
+[connection signal="pressed" from="BG/Everything/FreeDaySelection/Buttons/Precedent" to="." method="_on_precedent_pressed"]
+[connection signal="pressed" from="BG/Everything/FreeDaySelection/Buttons/Suivant" to="." method="_on_suivant_pressed"]

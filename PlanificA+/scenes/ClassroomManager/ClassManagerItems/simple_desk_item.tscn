@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=3 uid="uid://mkhahy05e4oo"]
+
+[ext_resource type="Texture2D" uid="uid://fq7b2eesftsd" path="res://assets/simple_desk.png" id="1_17ofn"]
+[ext_resource type="Script" uid="uid://dhq8c86h8d0tg" path="res://scenes/ClassroomManager/ClassManagerItems/item.gd" id="2_dq1j4"]
+[ext_resource type="Texture2D" uid="uid://b18bpbt8lkr3v" path="res://assets/Gemini_Generated_Image_7lyslc7lyslc7lys.png" id="2_ntpqw"]
+[ext_resource type="Texture2D" uid="uid://1kh3lciqo6b8" path="res://_theme/_icons/CircularArrowsIcon.png" id="4_01ind"]
+[ext_resource type="StyleBox" uid="uid://d16cnorwnlc8o" path="res://_theme/turn_item_button.tres" id="4_470hi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dacba"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3328808, 0.33288068, 0.33288068, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 10
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[node name="SimpleDesk" type="TextureButton"]
+custom_minimum_size = Vector2(150, 120)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -62.5
+offset_right = 75.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(75, 62.5)
+texture_normal = ExtResource("1_17ofn")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("2_dq1j4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 5.5
+offset_right = 117.0
+offset_bottom = 83.5
+texture = ExtResource("2_ntpqw")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+offset_left = 9.0
+offset_top = 84.5
+offset_right = 142.0
+offset_bottom = 104.5
+theme_override_font_sizes/font_size = 12
+text = "Nom"
+horizontal_alignment = 1
+
+[node name="Line2D" type="Line2D" parent="."]
+visible = false
+position = Vector2(3, -3.5)
+points = PackedVector2Array(72, 4.5, 72, -21)
+width = 2.0
+default_color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="TurnButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 63.0
+offset_top = -46.5
+offset_right = 86.0
+offset_bottom = -24.5
+mouse_default_cursor_shape = 10
+theme_override_styles/normal = ExtResource("4_470hi")
+theme_override_styles/pressed = ExtResource("4_470hi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dacba")
+theme_override_styles/disabled = ExtResource("4_470hi")
+theme_override_styles/focus = ExtResource("4_470hi")
+icon = ExtResource("4_01ind")
+expand_icon = true
+
+[connection signal="gui_input" from="TurnButton" to="." method="_on_turn_button_gui_input"]

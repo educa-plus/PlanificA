@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://lpwakrgnpjs5"]
+
+[ext_resource type="Texture2D" uid="uid://c13ie5mfoj85t" path="res://_theme/_assets/calendar-panel.png" id="1_pp2tc"]
+[ext_resource type="Script" uid="uid://d1b53rjold24h" path="res://scenes/CustomNodes/time_selector_panel.gd" id="2_pp2tc"]
+[ext_resource type="Theme" uid="uid://c7w1reucq2h0m" path="res://_theme/icon_desks.tres" id="3_tr35f"]
+[ext_resource type="Texture2D" uid="uid://ck74w0ote1ndk" path="res://_theme/_icons/up_chevron-left.png" id="4_k3kfm"]
+[ext_resource type="Texture2D" uid="uid://dt6abita3n0kv" path="res://_theme/_icons/down_chevron-left.png" id="5_ojsjc"]
+[ext_resource type="Theme" uid="uid://b0y6xcq1tdygf" path="res://_theme/button-primary.tres" id="6_kukhg"]
+[ext_resource type="Texture2D" uid="uid://d3nn8umfnrkgc" path="res://_theme/_icons/XIcon.png" id="7_o7yoa"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vpgy7"]
+texture = ExtResource("1_pp2tc")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[node name="TimeModifierPanel" type="PanelContainer" unique_id=755937252]
+offset_right = 105.0
+offset_bottom = 128.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_vpgy7")
+script = ExtResource("2_pp2tc")
+
+[node name="TimeModifierMargin" type="MarginContainer" parent="." unique_id=951053859]
+layout_mode = 2
+theme_override_constants/margin_left = -6
+theme_override_constants/margin_top = -12
+theme_override_constants/margin_right = -6
+theme_override_constants/margin_bottom = -12
+
+[node name="TimeModifier" type="VBoxContainer" parent="TimeModifierMargin" unique_id=1920276536]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="UpButton" type="HBoxContainer" parent="TimeModifierMargin/TimeModifier" unique_id=2118292582]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="UpHour" type="Button" parent="TimeModifierMargin/TimeModifier/UpButton" unique_id=2107352039]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_tr35f")
+icon = ExtResource("4_k3kfm")
+expand_icon = true
+
+[node name="UpHourRepeatTimer" type="Timer" parent="TimeModifierMargin/TimeModifier/UpButton" unique_id=1461140699]
+
+[node name="UpMinute" type="Button" parent="TimeModifierMargin/TimeModifier/UpButton" unique_id=1014889091]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 10
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_tr35f")
+icon = ExtResource("4_k3kfm")
+expand_icon = true
+
+[node name="UpMinuteRepeatTimer" type="Timer" parent="TimeModifierMargin/TimeModifier/UpButton" unique_id=1060705026]
+
+[node name="Time" type="MarginContainer" parent="TimeModifierMargin/TimeModifier" unique_id=289734823]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_right = 6
+
+[node name="Time" type="HBoxContainer" parent="TimeModifierMargin/TimeModifier/Time" unique_id=603604528]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Hour" type="Label" parent="TimeModifierMargin/TimeModifier/Time/Time" unique_id=1693787882]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "01"
+horizontal_alignment = 1
+
+[node name="Between" type="Label" parent="TimeModifierMargin/TimeModifier/Time/Time" unique_id=1524717517]
+layout_mode = 2
+size_flags_horizontal = 6
+text = ":"
+horizontal_alignment = 1
+
+[node name="Minute" type="Label" parent="TimeModifierMargin/TimeModifier/Time/Time" unique_id=1635235313]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "01"
+horizontal_alignment = 1
+
+[node name="DownButton" type="HBoxContainer" parent="TimeModifierMargin/TimeModifier" unique_id=1338154888]
+layout_mode = 2
+
+[node name="DownHour" type="Button" parent="TimeModifierMargin/TimeModifier/DownButton" unique_id=1164756861]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_tr35f")
+icon = ExtResource("5_ojsjc")
+expand_icon = true
+
+[node name="DownHourRepeatTimer" type="Timer" parent="TimeModifierMargin/TimeModifier/DownButton" unique_id=1548681358]
+
+[node name="DownMinute" type="Button" parent="TimeModifierMargin/TimeModifier/DownButton" unique_id=550979059]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 10
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_tr35f")
+icon = ExtResource("5_ojsjc")
+expand_icon = true
+
+[node name="DownMinuteRepeatTimer" type="Timer" parent="TimeModifierMargin/TimeModifier/DownButton" unique_id=1838591660]
+
+[node name="Steps" type="HBoxContainer" parent="TimeModifierMargin/TimeModifier" unique_id=291330902]
+layout_mode = 2
+
+[node name="Next" type="Button" parent="TimeModifierMargin/TimeModifier/Steps" unique_id=1075761991]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme = ExtResource("6_kukhg")
+text = "ok"
+
+[node name="Control" type="Control" parent="TimeModifierMargin" unique_id=373261004]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Back" type="Button" parent="TimeModifierMargin/Control" unique_id=685227022]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 4.5
+offset_top = -18.0
+offset_right = 24.5
+offset_bottom = 2.0
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_tr35f")
+icon = ExtResource("7_o7yoa")
+expand_icon = true

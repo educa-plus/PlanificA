@@ -1,0 +1,345 @@
+[gd_scene format=3 uid="uid://cjwf5baspdedc"]
+
+[ext_resource type="Script" uid="uid://b5v4luq2eft0n" path="res://scenes/Agenda/agenda_display.gd" id="1_is7xf"]
+[ext_resource type="Theme" uid="uid://ffjylg2o1cnn" path="res://_theme/icons_button.tres" id="2_xjg7p"]
+[ext_resource type="Texture2D" uid="uid://b06exdkpy2ddn" path="res://_theme/_icons/d_chevron-right.png" id="3_xjg7p"]
+[ext_resource type="Texture2D" uid="uid://qfxjvgf8gukw" path="res://_theme/_icons/d_chevron-left.png" id="3_xtedc"]
+[ext_resource type="PackedScene" uid="uid://d1yul15vcsajo" path="res://scenes/Agenda/WeekendCase.tscn" id="5_kqyls"]
+[ext_resource type="Theme" uid="uid://b0y6xcq1tdygf" path="res://_theme/button-primary.tres" id="5_xjg7p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xtedc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kqyls"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xjg7p"]
+
+[node name="Agenda" type="Control" unique_id=1995552959]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_is7xf")
+
+[node name="Scroll" type="ScrollContainer" parent="." unique_id=849521917]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EveryThing" type="HBoxContainer" parent="Scroll" unique_id=1038601406]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Reference" type="VBoxContainer" parent="Scroll/EveryThing" unique_id=263165211]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Date_label" type="PanelContainer" parent="Scroll/EveryThing/Reference" unique_id=1238938232]
+visible = false
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+
+[node name="Date_label" type="MarginContainer" parent="Scroll/EveryThing/Reference/Date_label" unique_id=1670145028]
+layout_mode = 2
+
+[node name="Date_label" type="VBoxContainer" parent="Scroll/EveryThing/Reference/Date_label/Date_label" unique_id=1429534973]
+layout_mode = 2
+alignment = 1
+
+[node name="MonthLabel" type="Label" parent="Scroll/EveryThing/Reference/Date_label/Date_label/Date_label" unique_id=1931054805]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 14
+text = "month"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Scroll/EveryThing/Reference/Date_label/Date_label/Date_label" unique_id=134387956]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xtedc")
+
+[node name="YearLabel" type="Label" parent="Scroll/EveryThing/Reference/Date_label/Date_label/Date_label" unique_id=275205352]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "year"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimePeriod" type="PanelContainer" parent="Scroll/EveryThing/Reference" unique_id=2065999296]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SideContainer" type="VBoxContainer" parent="Scroll/EveryThing/Reference/TimePeriod" unique_id=207997177]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Date_label" type="VBoxContainer" parent="Scroll/EveryThing/Reference/TimePeriod/SideContainer" unique_id=199828946]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+alignment = 1
+
+[node name="MonthLabel" type="Label" parent="Scroll/EveryThing/Reference/TimePeriod/SideContainer/Date_label" unique_id=2072548612]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 14
+text = "month"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Scroll/EveryThing/Reference/TimePeriod/SideContainer/Date_label" unique_id=686003574]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xtedc")
+
+[node name="YearLabel" type="Label" parent="Scroll/EveryThing/Reference/TimePeriod/SideContainer/Date_label" unique_id=1347168149]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "year"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PadHSeparator" type="HSeparator" parent="Scroll/EveryThing/Reference/TimePeriod/SideContainer" unique_id=1543284593]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+theme_override_styles/separator = SubResource("StyleBoxEmpty_kqyls")
+
+[node name="HSeparator3" type="HSeparator" parent="Scroll/EveryThing/Reference/TimePeriod/SideContainer" unique_id=794884398]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Scroll/EveryThing/Reference/TimePeriod/SideContainer" unique_id=556409425]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_bottom = -12
+
+[node name="PeriodTimeContainer" type="VBoxContainer" parent="Scroll/EveryThing/Reference/TimePeriod/SideContainer/MarginContainer" unique_id=1488966345]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DayOrganisation" type="VBoxContainer" parent="Scroll/EveryThing" unique_id=1587401323]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DayLabelsPanel" type="PanelContainer" parent="Scroll/EveryThing/DayOrganisation" unique_id=1596239971]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 76)
+layout_mode = 2
+
+[node name="Marges" type="MarginContainer" parent="Scroll/EveryThing/DayOrganisation/DayLabelsPanel" unique_id=75226543]
+layout_mode = 2
+theme_override_constants/margin_left = -12
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = -12
+theme_override_constants/margin_bottom = 0
+
+[node name="DayLabelsVbox" type="HBoxContainer" parent="Scroll/EveryThing/DayOrganisation/DayLabelsPanel/Marges" unique_id=1056730867]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="Gauche" type="Button" parent="Scroll/EveryThing/DayOrganisation/DayLabelsPanel/Marges" unique_id=1362218872]
+custom_minimum_size = Vector2(42, 45)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_xjg7p")
+icon = ExtResource("3_xtedc")
+icon_alignment = 2
+expand_icon = true
+
+[node name="Droite" type="Button" parent="Scroll/EveryThing/DayOrganisation/DayLabelsPanel/Marges" unique_id=1079087994]
+custom_minimum_size = Vector2(44, 45)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_xjg7p")
+icon = ExtResource("3_xjg7p")
+expand_icon = true
+
+[node name="Marges2" type="MarginContainer" parent="Scroll/EveryThing/DayOrganisation/DayLabelsPanel" unique_id=743264368]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = -4
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = -4
+theme_override_constants/margin_bottom = 0
+
+[node name="Droite2" type="Button" parent="Scroll/EveryThing/DayOrganisation/DayLabelsPanel/Marges2" unique_id=42777700]
+light_mask = 4
+visibility_layer = 4
+z_index = 1
+custom_minimum_size = Vector2(36, 45)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_xjg7p")
+icon = ExtResource("3_xjg7p")
+expand_icon = true
+
+[node name="Gauche2" type="Button" parent="Scroll/EveryThing/DayOrganisation/DayLabelsPanel/Marges2" unique_id=1369834413]
+light_mask = 4
+visibility_layer = 4
+z_index = 1
+custom_minimum_size = Vector2(36, 45)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_xjg7p")
+icon = ExtResource("3_xtedc")
+expand_icon = true
+
+[node name="HSeparator" type="HSeparator" parent="Scroll/EveryThing/DayOrganisation" unique_id=2121828593]
+layout_mode = 2
+
+[node name="Week" type="HBoxContainer" parent="Scroll/EveryThing/DayOrganisation" unique_id=1723858926]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Monday" type="VBoxContainer" parent="Scroll/EveryThing/DayOrganisation/Week" unique_id=1887554407]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VSeparator" type="VSeparator" parent="Scroll/EveryThing/DayOrganisation/Week" unique_id=1215290103]
+layout_mode = 2
+
+[node name="Tuesday" type="VBoxContainer" parent="Scroll/EveryThing/DayOrganisation/Week" unique_id=1212910163]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VSeparator2" type="VSeparator" parent="Scroll/EveryThing/DayOrganisation/Week" unique_id=455865009]
+layout_mode = 2
+
+[node name="Wednesday" type="VBoxContainer" parent="Scroll/EveryThing/DayOrganisation/Week" unique_id=1326619659]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VSeparator3" type="VSeparator" parent="Scroll/EveryThing/DayOrganisation/Week" unique_id=1102246810]
+layout_mode = 2
+
+[node name="Thursday" type="VBoxContainer" parent="Scroll/EveryThing/DayOrganisation/Week" unique_id=294328089]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VSeparator4" type="VSeparator" parent="Scroll/EveryThing/DayOrganisation/Week" unique_id=423639715]
+layout_mode = 2
+
+[node name="Friday" type="VBoxContainer" parent="Scroll/EveryThing/DayOrganisation/Week" unique_id=76086848]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VSeparator5" type="VSeparator" parent="Scroll/EveryThing/DayOrganisation/Week" unique_id=657372168]
+visible = false
+layout_mode = 2
+
+[node name="WeekendCases" type="VBoxContainer" parent="Scroll/EveryThing/DayOrganisation/Week" unique_id=1854874151]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SaturdayCase" parent="Scroll/EveryThing/DayOrganisation/Week/WeekendCases" unique_id=529684210 instance=ExtResource("5_kqyls")]
+layout_mode = 2
+type = "saturday"
+modulation = Color(1, 1, 1, 1)
+
+[node name="SundayCase" parent="Scroll/EveryThing/DayOrganisation/Week/WeekendCases" unique_id=444570542 instance=ExtResource("5_kqyls")]
+layout_mode = 2
+type = "sunday"
+modulation = Color(1, 1, 1, 1)
+
+[node name="FileDialog" type="FileDialog" parent="." unique_id=1421205327]
+title = "Open a File"
+force_native = true
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+use_native_dialog = true
+
+[node name="WarningBox" type="PanelContainer" parent="." unique_id=1006716915]
+visible = false
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="WarningBox" unique_id=1460653067]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VboxContainer" type="VBoxContainer" parent="WarningBox/MarginContainer" unique_id=171792386]
+layout_mode = 2
+
+[node name="WarningTitle" type="Label" parent="WarningBox/MarginContainer/VboxContainer" unique_id=2088604688]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Attention"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="WarningBox/MarginContainer/VboxContainer" unique_id=61951173]
+layout_mode = 2
+theme_override_constants/separation = 6
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xjg7p")
+
+[node name="WarningMessageLabel" type="RichTextLabel" parent="WarningBox/MarginContainer/VboxContainer" unique_id=508396154]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="WarningBox/MarginContainer/VboxContainer" unique_id=420925846]
+layout_mode = 2
+theme_override_constants/separation = 6
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xjg7p")
+
+[node name="Buttons" type="HBoxContainer" parent="WarningBox/MarginContainer/VboxContainer" unique_id=64896461]
+layout_mode = 2
+
+[node name="No" type="Button" parent="WarningBox/MarginContainer/VboxContainer/Buttons" unique_id=813680764]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("5_xjg7p")
+text = "Non"
+
+[node name="Yes" type="Button" parent="WarningBox/MarginContainer/VboxContainer/Buttons" unique_id=2139572950]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("5_xjg7p")
+text = "Oui"
+
+[connection signal="pressed" from="Scroll/EveryThing/DayOrganisation/DayLabelsPanel/Marges/Gauche" to="." method="_on_gauche_pressed"]
+[connection signal="pressed" from="Scroll/EveryThing/DayOrganisation/DayLabelsPanel/Marges/Droite" to="." method="_on_droite_pressed"]
+[connection signal="pressed" from="Scroll/EveryThing/DayOrganisation/DayLabelsPanel/Marges2/Droite2" to="." method="_on_droite_pressed"]
+[connection signal="pressed" from="Scroll/EveryThing/DayOrganisation/DayLabelsPanel/Marges2/Gauche2" to="." method="_on_gauche_pressed"]

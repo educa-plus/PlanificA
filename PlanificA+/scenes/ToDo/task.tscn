@@ -1,0 +1,183 @@
+[gd_scene format=3 uid="uid://c310vxcs2dbjr"]
+
+[ext_resource type="Script" uid="uid://dbh4cb12c7qmx" path="res://scenes/ToDo/task.gd" id="1_c3ehp"]
+[ext_resource type="Texture2D" uid="uid://bmvt6tasfrdjl" path="res://_theme/_assets/textedit-active.png" id="1_hw4n5"]
+[ext_resource type="Texture2D" uid="uid://br5vqek0earqw" path="res://_theme/_assets/textedit-disabled.png" id="2_v4bca"]
+[ext_resource type="Theme" uid="uid://ffjylg2o1cnn" path="res://_theme/icons_button.tres" id="3_drupi"]
+[ext_resource type="Script" uid="uid://lhd0tv7vww74" path="res://scenes/ToDo/slidable_progress_bar.gd" id="5_3qnvo"]
+[ext_resource type="Texture2D" uid="uid://d3nn8umfnrkgc" path="res://_theme/_icons/XIcon.png" id="5_c3ehp"]
+[ext_resource type="PackedScene" uid="uid://cgx0lne32pysq" path="res://scenes/CustomNodes/DateSelectorPopup.tscn" id="7_jn88t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bdaql"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c3ehp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3qnvo"]
+content_margin_left = 8.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c3ehp"]
+content_margin_top = 4.0
+texture = ExtResource("1_hw4n5")
+texture_margin_left = 8.0
+texture_margin_top = 8.269906
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(0, -0.11108351, 84, 84.111084)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jn88t"]
+content_margin_top = 4.0
+texture = ExtResource("2_v4bca")
+texture_margin_left = 8.0
+texture_margin_top = 8.269906
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(0, -0.11108351, 84, 84.111084)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ti6np"]
+
+[node name="TaskContainer" type="PanelContainer" unique_id=1070095790]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 71.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+mouse_filter = 2
+mouse_default_cursor_shape = 6
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bdaql")
+script = ExtResource("1_c3ehp")
+
+[node name="TaskVContainer" type="VBoxContainer" parent="." unique_id=1141988288]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="PreHSeparator" type="HSeparator" parent="TaskVContainer" unique_id=1700648245]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_default_cursor_shape = 6
+theme_override_constants/separation = 0
+
+[node name="MarginSeparator" type="HSeparator" parent="TaskVContainer" unique_id=1992889253]
+layout_mode = 2
+mouse_default_cursor_shape = 6
+theme_override_constants/separation = 12
+theme_override_styles/separator = SubResource("StyleBoxEmpty_c3ehp")
+
+[node name="TaskText" type="TextEdit" parent="TaskVContainer" unique_id=2015656348]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3qnvo")
+theme_override_styles/focus = SubResource("StyleBoxTexture_c3ehp")
+theme_override_styles/read_only = SubResource("StyleBoxTexture_jn88t")
+text = "Planifier le chapitre 15 avant la fin de la semaine prochaine"
+placeholder_text = "Description de la tâche"
+wrap_mode = 1
+scroll_fit_content_height = true
+
+[node name="DeleteTask" type="Button" parent="TaskVContainer/TaskText" unique_id=1346966294]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_top = 1.0
+offset_bottom = 21.0
+grow_horizontal = 0
+tooltip_text = "Supprimer définitivement la tâche"
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_drupi")
+icon = ExtResource("5_c3ehp")
+expand_icon = true
+
+[node name="HSeparator" type="HSeparator" parent="TaskVContainer" unique_id=1842583571]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ti6np")
+
+[node name="SlidableProgressBar" type="HBoxContainer" parent="TaskVContainer" unique_id=1495358591]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("5_3qnvo")
+
+[node name="ProgressSlider" type="HSlider" parent="TaskVContainer/SlidableProgressBar" unique_id=1994262999]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 15
+value = 25.0
+
+[node name="NameOfSlider" type="Label" parent="TaskVContainer/SlidableProgressBar/ProgressSlider" unique_id=1351847028]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -8.5
+offset_right = 45.0
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "Progression de la tâche"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Percent" type="Label" parent="TaskVContainer/SlidableProgressBar" unique_id=1310010735]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "50%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DateSelectorContainer" type="HBoxContainer" parent="TaskVContainer" unique_id=1362479833]
+layout_mode = 2
+
+[node name="InfoLabel" type="Label" parent="TaskVContainer/DateSelectorContainer" unique_id=336347574]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "À terminer pour le "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DateSelector" type="Button" parent="TaskVContainer/DateSelectorContainer" unique_id=1300471621]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(26, 24)
+layout_mode = 2
+size_flags_horizontal = 10
+mouse_default_cursor_shape = 2
+text = "AAAA/MM/JJ"
+flat = true
+expand_icon = true
+
+[node name="DateSelectorPopup" parent="TaskVContainer/DateSelectorContainer/DateSelector" unique_id=541158407 instance=ExtResource("7_jn88t")]
+unique_name_in_owner = true
+visible = false
+date_font_size = 8
+
+[node name="Control" type="Control" parent="." unique_id=674876422]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control" unique_id=1125559288]
+layout_mode = 1
+offset_left = -8.0
+offset_top = 2.5
+offset_right = -3.0
+offset_bottom = 22.5
+text = "-"
+
+[connection signal="text_changed" from="TaskVContainer/TaskText" to="." method="_on_task_text_text_changed"]
+[connection signal="pressed" from="TaskVContainer/TaskText/DeleteTask" to="." method="_on_delete_task_pressed"]
+[connection signal="completed" from="TaskVContainer/SlidableProgressBar" to="." method="_on_slidable_progress_bar_completed"]
+[connection signal="modified" from="TaskVContainer/SlidableProgressBar" to="." method="_on_slidable_progress_bar_modified"]
+[connection signal="was_completed" from="TaskVContainer/SlidableProgressBar" to="." method="_on_slidable_progress_bar_was_completed"]
+[connection signal="drag_ended" from="TaskVContainer/SlidableProgressBar/ProgressSlider" to="TaskVContainer/SlidableProgressBar" method="_on_progress_slider_drag_ended"]
+[connection signal="value_changed" from="TaskVContainer/SlidableProgressBar/ProgressSlider" to="TaskVContainer/SlidableProgressBar" method="_on_progress_slider_value_changed"]
+[connection signal="pressed" from="TaskVContainer/DateSelectorContainer/DateSelector" to="." method="_on_date_selector_pressed"]
+[connection signal="visibility_changed" from="TaskVContainer/DateSelectorContainer/DateSelector/DateSelectorPopup" to="." method="_on_date_selector_popup_visibility_changed"]

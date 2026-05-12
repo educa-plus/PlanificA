@@ -1,0 +1,186 @@
+[gd_scene format=3 uid="uid://b7sho6nr81o7f"]
+
+[ext_resource type="Script" uid="uid://b856mhtgmrqo2" path="res://scenes/GeneralPanel/general_panel.gd" id="1_eha34"]
+[ext_resource type="Theme" uid="uid://ffjylg2o1cnn" path="res://_theme/icons_button.tres" id="2_hhctu"]
+[ext_resource type="Texture2D" uid="uid://bmpfqylohcabx" path="res://_theme/_icons/chevron-left.png" id="3_ccw2n"]
+[ext_resource type="Texture2D" uid="uid://c1oecrobttuwe" path="res://_theme/_icons/chevron-right.png" id="4_ccw2n"]
+[ext_resource type="Theme" uid="uid://c0mqqrd1xpx5c" path="res://_theme/button-calendar-first.tres" id="5_hhctu"]
+[ext_resource type="Theme" uid="uid://ce0ykh8nd6sym" path="res://_theme/button-calendar-last.tres" id="6_wre4s"]
+[ext_resource type="Theme" uid="uid://ba84kgn72i5o" path="res://_theme/button-calendar-yellow.tres" id="7_e6804"]
+[ext_resource type="Theme" uid="uid://c0otkkwlovu26" path="res://_theme/button-calendar-green.tres" id="8_xj5yw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ccw2n"]
+
+[node name="GeneralPanel" type="Control" unique_id=1852781477]
+custom_minimum_size = Vector2(204, 0)
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 204.0
+grow_vertical = 2
+script = ExtResource("1_eha34")
+
+[node name="Everything" type="PanelContainer" parent="." unique_id=90955636]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 180.0
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="EveryThing" type="VBoxContainer" parent="Everything" unique_id=1683642708]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MonthLabelMargin" type="MarginContainer" parent="Everything/EveryThing" unique_id=1902586762]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+
+[node name="MonthCalendar" type="VBoxContainer" parent="Everything/EveryThing/MonthLabelMargin" unique_id=894569040]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="LabelAndButton" type="HBoxContainer" parent="Everything/EveryThing/MonthLabelMargin/MonthCalendar" unique_id=475806249]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="MonthPanel" type="MarginContainer" parent="Everything/EveryThing/MonthLabelMargin/MonthCalendar/LabelAndButton" unique_id=1731502951]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+
+[node name="PreviousMonth" type="Button" parent="Everything/EveryThing/MonthLabelMargin/MonthCalendar/LabelAndButton/MonthPanel" unique_id=832094819]
+custom_minimum_size = Vector2(22, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_hhctu")
+icon = ExtResource("3_ccw2n")
+expand_icon = true
+
+[node name="Month" type="Label" parent="Everything/EveryThing/MonthLabelMargin/MonthCalendar/LabelAndButton/MonthPanel" unique_id=144310455]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 16
+text = "Month"
+horizontal_alignment = 1
+
+[node name="NextMonth" type="Button" parent="Everything/EveryThing/MonthLabelMargin/MonthCalendar/LabelAndButton/MonthPanel" unique_id=835721094]
+custom_minimum_size = Vector2(22, 30)
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_hhctu")
+icon = ExtResource("4_ccw2n")
+expand_icon = true
+
+[node name="HSeparator2" type="HSeparator" parent="Everything/EveryThing" unique_id=1986499825]
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ccw2n")
+
+[node name="Legend" type="Label" parent="Everything/EveryThing" unique_id=1273346034]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Légende :"
+
+[node name="HSeparator3" type="HSeparator" parent="Everything/EveryThing" unique_id=774064200]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ccw2n")
+
+[node name="LegendVbox" type="VBoxContainer" parent="Everything/EveryThing" unique_id=655642373]
+layout_mode = 2
+
+[node name="FirstDay" type="HBoxContainer" parent="Everything/EveryThing/LegendVbox" unique_id=961885415]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Everything/EveryThing/LegendVbox/FirstDay" unique_id=1989594736]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Premier jour :"
+
+[node name="Button" type="Button" parent="Everything/EveryThing/LegendVbox/FirstDay" unique_id=2098532710]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("5_hhctu")
+
+[node name="LastDay" type="HBoxContainer" parent="Everything/EveryThing/LegendVbox" unique_id=843827327]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Everything/EveryThing/LegendVbox/LastDay" unique_id=1649852149]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Dernier jour :"
+
+[node name="Button2" type="Button" parent="Everything/EveryThing/LegendVbox/LastDay" unique_id=804538171]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("6_wre4s")
+
+[node name="TeacherWorkday" type="HBoxContainer" parent="Everything/EveryThing/LegendVbox" unique_id=2123881004]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Everything/EveryThing/LegendVbox/TeacherWorkday" unique_id=650096944]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Journée pédagogique :"
+
+[node name="Button3" type="Button" parent="Everything/EveryThing/LegendVbox/TeacherWorkday" unique_id=132470406]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("7_e6804")
+
+[node name="TeacherWorkday2" type="HBoxContainer" parent="Everything/EveryThing/LegendVbox" unique_id=610100445]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Everything/EveryThing/LegendVbox/TeacherWorkday2" unique_id=1802266809]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Jour de congé :"
+
+[node name="Button4" type="Button" parent="Everything/EveryThing/LegendVbox/TeacherWorkday2" unique_id=1274428754]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("8_xj5yw")
+
+[node name="HSeparator" type="HSeparator" parent="Everything/EveryThing" unique_id=1473019598]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="GroupLabel" type="Label" parent="Everything/EveryThing" unique_id=2093868208]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "Mes groupes :"
+vertical_alignment = 1
+
+[node name="HSeparator4" type="HSeparator" parent="Everything/EveryThing" unique_id=1364686193]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ccw2n")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Everything/EveryThing" unique_id=84302419]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GroupManagerPanel" type="PanelContainer" parent="Everything/EveryThing/ScrollContainer" unique_id=1931496923]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GroupManager" type="VBoxContainer" parent="Everything/EveryThing/ScrollContainer/GroupManagerPanel" unique_id=1197250652]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[connection signal="pressed" from="Everything/EveryThing/MonthLabelMargin/MonthCalendar/LabelAndButton/MonthPanel/PreviousMonth" to="." method="_on_previous_month_pressed"]
+[connection signal="pressed" from="Everything/EveryThing/MonthLabelMargin/MonthCalendar/LabelAndButton/MonthPanel/NextMonth" to="." method="_on_next_month_pressed"]

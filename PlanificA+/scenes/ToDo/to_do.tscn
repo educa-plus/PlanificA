@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://cmlagphnsijbd"]
+
+[ext_resource type="Script" uid="uid://ihmexje0c3o7" path="res://scenes/ToDo/to_do.gd" id="1_jipr8"]
+[ext_resource type="Theme" uid="uid://b0y6xcq1tdygf" path="res://_theme/button-primary.tres" id="2_4yftf"]
+[ext_resource type="Script" uid="uid://bp26g6y8wqo3h" path="res://addons/ReorderableContainer/reorderable_vbox.gd" id="2_uyg3f"]
+[ext_resource type="Texture2D" uid="uid://bx4af7mbugwid" path="res://_theme/_icons/PlusIcon.png" id="3_m60do"]
+[ext_resource type="Theme" uid="uid://ffjylg2o1cnn" path="res://_theme/icons_button.tres" id="5_j0ps6"]
+[ext_resource type="Texture2D" uid="uid://d0vc2kw2d5tqm" path="res://_theme/_icons/BinIcon.png" id="5_uyg3f"]
+
+[node name="ToDo" type="Control" unique_id=1339851437]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_jipr8")
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=1174486747]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 1
+all_tabs_in_front = true
+
+[node name="À faire" type="ScrollContainer" parent="TabContainer" unique_id=1088233426]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/À faire" unique_id=60269724]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PlanifRichTextLabel" type="RichTextLabel" parent="TabContainer/À faire/MarginContainer" unique_id=1251449391]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.2, 0.2, 0.2, 0.39215687)
+theme_override_constants/line_separation = 0
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+bbcode_enabled = true
+text = "_____________________________________________________"
+fit_content = true
+autowrap_mode = 1
+
+[node name="TaskVbox" type="VBoxContainer" parent="TabContainer/À faire/MarginContainer" unique_id=2067061968]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TaskScrollContainer" type="ScrollContainer" parent="TabContainer/À faire/MarginContainer/TaskVbox" unique_id=82998586]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TaskBox" type="Container" parent="TabContainer/À faire/MarginContainer/TaskVbox/TaskScrollContainer" unique_id=1783010160 node_paths=PackedStringArray("scroll_container")]
+unique_name_in_owner = true
+process_mode = 1
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_uyg3f")
+hold_duration = 0.2
+is_vertical = true
+scroll_container = NodePath("..")
+auto_scroll_range = 0.2
+scroll_threshold = 10
+metadata/_custom_type_script = "uid://bp26g6y8wqo3h"
+
+[node name="AddTask" type="Button" parent="TabContainer/À faire/MarginContainer/TaskVbox" unique_id=816631005]
+custom_minimum_size = Vector2(50, 35)
+layout_mode = 2
+size_flags_vertical = 8
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_4yftf")
+icon = ExtResource("3_m60do")
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Terminé" type="ScrollContainer" parent="TabContainer" unique_id=5843972]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Terminé" unique_id=884069782]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Vbox" type="VBoxContainer" parent="TabContainer/Terminé/MarginContainer" unique_id=953391977]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FinishedScrollContainer" type="ScrollContainer" parent="TabContainer/Terminé/MarginContainer/Vbox" unique_id=22038191]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FinishedTaskVbox" type="Container" parent="TabContainer/Terminé/MarginContainer/Vbox/FinishedScrollContainer" unique_id=805920552 node_paths=PackedStringArray("scroll_container")]
+unique_name_in_owner = true
+process_mode = 1
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_uyg3f")
+hold_duration = 0.2
+is_vertical = true
+scroll_container = NodePath("..")
+auto_scroll_range = 0.2
+scroll_threshold = 10
+metadata/_custom_type_script = "uid://bp26g6y8wqo3h"
+
+[node name="PanelContainer" type="PanelContainer" parent="TabContainer/Terminé/MarginContainer/Vbox" unique_id=1686013788]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Clean" type="HBoxContainer" parent="TabContainer/Terminé/MarginContainer/Vbox/PanelContainer" unique_id=1694035672]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Terminé/MarginContainer/Vbox/PanelContainer/Clean" unique_id=280263951]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Vider la liste"
+
+[node name="Basket" type="Button" parent="TabContainer/Terminé/MarginContainer/Vbox/PanelContainer/Clean" unique_id=837395258]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 10
+mouse_default_cursor_shape = 2
+theme = ExtResource("5_j0ps6")
+icon = ExtResource("5_uyg3f")
+expand_icon = true
+
+[connection signal="tab_changed" from="TabContainer" to="." method="_on_tab_container_tab_changed"]
+[connection signal="reordered" from="TabContainer/À faire/MarginContainer/TaskVbox/TaskScrollContainer/TaskBox" to="." method="_on_task_box_reordered"]
+[connection signal="sort_children" from="TabContainer/À faire/MarginContainer/TaskVbox/TaskScrollContainer/TaskBox" to="TabContainer/À faire/MarginContainer/TaskVbox/TaskScrollContainer/TaskBox" method="_on_sort_children"]
+[connection signal="pressed" from="TabContainer/À faire/MarginContainer/TaskVbox/AddTask" to="." method="_on_add_task_pressed"]
+[connection signal="sort_children" from="TabContainer/Terminé/MarginContainer/Vbox/FinishedScrollContainer/FinishedTaskVbox" to="TabContainer/Terminé/MarginContainer/Vbox/FinishedScrollContainer/FinishedTaskVbox" method="_on_sort_children"]
+[connection signal="pressed" from="TabContainer/Terminé/MarginContainer/Vbox/PanelContainer/Clean/Basket" to="." method="_on_basket_pressed"]

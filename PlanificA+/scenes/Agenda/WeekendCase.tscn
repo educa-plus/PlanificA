@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://d1yul15vcsajo"]
+
+[ext_resource type="Script" uid="uid://1jobdaxep7ak" path="res://scenes/Agenda/weekend_case.gd" id="1_y8v61"]
+[ext_resource type="Texture2D" uid="uid://c13ie5mfoj85t" path="res://_theme/_assets/calendar-panel.png" id="2_cxgu3"]
+[ext_resource type="Texture2D" uid="uid://bmvt6tasfrdjl" path="res://_theme/_assets/textedit-active.png" id="7_k6ayo"]
+[ext_resource type="Texture2D" uid="uid://br5vqek0earqw" path="res://_theme/_assets/textedit-disabled.png" id="8_6vdic"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rgqit"]
+texture = ExtResource("2_cxgu3")
+texture_margin_left = 12.043108
+texture_margin_top = 11.845263
+texture_margin_right = 11.647419
+region_rect = Rect2(0, 0, 80, 58.218178)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xjwmb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jshro"]
+bg_color = Color(0.8474744, 0.84747446, 0.8474743, 1)
+border_width_top = 8
+border_color = Color(0.6830765, 0.68307775, 0.68307656, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jshro"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xjwmb"]
+content_margin_top = 8.0
+texture = ExtResource("7_k6ayo")
+texture_margin_left = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(0, 13.402739, 83.56648, 70.59726)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jshro"]
+texture = ExtResource("7_k6ayo")
+texture_margin_left = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(0, 17.46079, 84, 66.53921)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mllay"]
+texture = ExtResource("8_6vdic")
+texture_margin_left = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(0, 18.766565, 84, 65.23344)
+
+[node name="WeekendCase" type="VBoxContainer" unique_id=529684210]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+script = ExtResource("1_y8v61")
+
+[node name="HeadingPanel" type="PanelContainer" parent="." unique_id=360657801]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rgqit")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HeadingPanel" unique_id=715059829]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Heading" type="Label" parent="HeadingPanel/VBoxContainer" unique_id=214002874]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Weekend Day"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="HeadingPanel/VBoxContainer" unique_id=201136827]
+layout_mode = 2
+theme_override_constants/separation = 8
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xjwmb")
+
+[node name="HardLine" type="HSeparator" parent="." unique_id=1771379684]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxFlat_jshro")
+
+[node name="LinedTextEdit" type="PanelContainer" parent="." unique_id=1404561943]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jshro")
+
+[node name="PlanifTextEdit" type="TextEdit" parent="LinedTextEdit" unique_id=2091163333]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxTexture_xjwmb")
+theme_override_styles/focus = SubResource("StyleBoxTexture_jshro")
+theme_override_styles/read_only = SubResource("StyleBoxTexture_mllay")
+wrap_mode = 1
+autowrap_mode = 1
+scroll_fit_content_height = true
+
+[node name="MarginContainer" type="MarginContainer" parent="LinedTextEdit" unique_id=1804632848]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 0
+
+[node name="PlanifRichTextLabel" type="RichTextLabel" parent="LinedTextEdit/MarginContainer" unique_id=2029818081]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.2, 0.2, 0.2, 0.39215687)
+theme_override_constants/line_separation = 0
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 1
+
+[connection signal="text_changed" from="LinedTextEdit/PlanifTextEdit" to="." method="_on_planif_text_edit_text_changed"]

@@ -1,0 +1,197 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0cb5ql4bawii"]
+
+[ext_resource type="Script" uid="uid://duuopk3j8renc" path="res://scenes/Planif_D_scene/Custom_Planification/custom_canva.gd" id="1_14dvr"]
+[ext_resource type="Script" uid="uid://cx8rf3hlnrkiv" path="res://addons/tnowe_extra_controls/elements/interpolated_container/interpolated_flow_container.gd" id="3_40qk6"]
+[ext_resource type="Theme" uid="uid://c7w1reucq2h0m" path="res://_theme/icon_desks.tres" id="5_ifbxg"]
+[ext_resource type="Texture2D" uid="uid://bx4af7mbugwid" path="res://_theme/_icons/PlusIcon.png" id="5_ukyni"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_14dvr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InterpolatedFlowContainer2" type="Container" parent="VBoxContainer"]
+layout_mode = 2
+script = ExtResource("3_40qk6")
+allow_drag_transfer = true
+allow_drag_insert = true
+metadata/_custom_type_script = "uid://cx8rf3hlnrkiv"
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/InterpolatedFlowContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer3" type="PanelContainer" parent="VBoxContainer/InterpolatedFlowContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InterpolatedFlowContainer" type="Container" parent="VBoxContainer"]
+layout_mode = 2
+script = ExtResource("3_40qk6")
+allow_drag_transfer = true
+allow_drag_insert = true
+metadata/_custom_type_script = "uid://cx8rf3hlnrkiv"
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/InterpolatedFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/InterpolatedFlowContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/InterpolatedFlowContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/InterpolatedFlowContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/InterpolatedFlowContainer"]
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/InterpolatedFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer3" type="PanelContainer" parent="VBoxContainer/InterpolatedFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBigBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 222.0
+grow_horizontal = 2
+
+[node name="InterpolatedFlowContainer" type="Container" parent="VBigBox" groups=["interpolated_containers"]]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("3_40qk6")
+allow_drag_transfer = true
+allow_drag_insert = true
+metadata/_custom_type_script = "uid://cx8rf3hlnrkiv"
+
+[node name="HBigBox" type="HBoxContainer" parent="VBigBox/InterpolatedFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="VBigBox/InterpolatedFlowContainer/HBigBox"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="HLittleBox" type="HBoxContainer" parent="VBigBox/InterpolatedFlowContainer/HBigBox/PanelContainer"]
+layout_mode = 2
+
+[node name="VLittleBox" type="VBoxContainer" parent="VBigBox/InterpolatedFlowContainer/HBigBox/PanelContainer/HLittleBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+
+[node name="Heading" type="LineEdit" parent="VBigBox/InterpolatedFlowContainer/HBigBox/PanelContainer/HLittleBox/VLittleBox" groups=["headings"]]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 16
+placeholder_text = "Titre"
+alignment = 1
+expand_to_text_length = true
+
+[node name="SubHeading" type="LineEdit" parent="VBigBox/InterpolatedFlowContainer/HBigBox/PanelContainer/HLittleBox/VLittleBox" groups=["sub_headings"]]
+layout_mode = 2
+size_flags_horizontal = 0
+placeholder_text = "Sous-titre"
+expand_to_text_length = true
+
+[node name="TextEdit" type="TextEdit" parent="VBigBox/InterpolatedFlowContainer/HBigBox/PanelContainer/HLittleBox/VLittleBox" groups=["text_edit_nodes"]]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+placeholder_text = "Texte de substitution"
+wrap_mode = 1
+
+[node name="InsidePlus" type="Button" parent="VBigBox/InterpolatedFlowContainer/HBigBox/PanelContainer/HLittleBox/VLittleBox" groups=["inside_plus_buttons_v"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("5_ifbxg")
+icon = ExtResource("5_ukyni")
+icon_alignment = 1
+expand_icon = true
+
+[node name="InsidePlus" type="Button" parent="VBigBox/InterpolatedFlowContainer/HBigBox/PanelContainer/HLittleBox" groups=["inside_plus_buttons_h"]]
+layout_mode = 2
+theme = ExtResource("5_ifbxg")
+icon = ExtResource("5_ukyni")
+icon_alignment = 1
+expand_icon = true
+
+[node name="ExternalPlus" type="Button" parent="VBigBox/InterpolatedFlowContainer/HBigBox" groups=["exterior_plus_buttons_h"]]
+layout_mode = 2
+theme = ExtResource("5_ifbxg")
+icon = ExtResource("5_ukyni")
+icon_alignment = 1
+expand_icon = true
+
+[node name="ExternalPlus" type="Button" parent="VBigBox" groups=["exterior_plus_buttons_v"]]
+layout_mode = 2
+theme = ExtResource("5_ifbxg")
+icon = ExtResource("5_ukyni")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button" type="Button" parent="." groups=["inside_minus_buttons_h", "inside_minus_buttons_v"]]
+visible = false
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer" groups=["v_separators"]]
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer" groups=["v_separators"]]
+layout_mode = 2
+
+[node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VSeparator3" type="VSeparator" parent="HBoxContainer" groups=["v_separators"]]
+layout_mode = 2
+
+[node name="PanelContainer4" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="drag_transfered_out" from="VBoxContainer/InterpolatedFlowContainer2" to="." method="_on_interpolated_flow_container_2_drag_transfered_out"]

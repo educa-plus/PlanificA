@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://da0cqctilutqc"]
+
+[ext_resource type="Texture2D" uid="uid://fq7b2eesftsd" path="res://assets/simple_desk.png" id="1_l845y"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(682, 370)
+texture = ExtResource("1_l845y")

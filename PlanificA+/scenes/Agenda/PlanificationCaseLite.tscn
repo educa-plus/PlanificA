@@ -1,0 +1,205 @@
+[gd_scene format=3 uid="uid://dsr03r6fmqlw8"]
+
+[ext_resource type="Texture2D" uid="uid://c13ie5mfoj85t" path="res://_theme/_assets/calendar-panel.png" id="1_7mcqq"]
+[ext_resource type="Script" uid="uid://pnc7uivkq5w" path="res://scenes/Agenda/planification_case_lite.gd" id="1_jh3h8"]
+[ext_resource type="Shader" uid="uid://dewwum2rrcqo7" path="res://Shaders/PlanificationCaseLite.gdshader" id="2_mllay"]
+[ext_resource type="Texture2D" uid="uid://bmvt6tasfrdjl" path="res://_theme/_assets/textedit-active.png" id="4_1gs8c"]
+[ext_resource type="Texture2D" uid="uid://s26f1nfcusjy" path="res://assets/empty_star.png" id="4_wmufy"]
+[ext_resource type="Texture2D" uid="uid://bj35ht01s2y5u" path="res://_theme/_icons/GoIntoPlanificationV1.png" id="4_xjwmb"]
+[ext_resource type="Theme" uid="uid://ffjylg2o1cnn" path="res://_theme/icons_button.tres" id="5_mllay"]
+[ext_resource type="Texture2D" uid="uid://br5vqek0earqw" path="res://_theme/_assets/textedit-disabled.png" id="5_wmufy"]
+[ext_resource type="Texture2D" uid="uid://b3q8qsycwyoc0" path="res://_theme/_assets/chevron-down-tree.png" id="6_jshro"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l0lka"]
+shader = ExtResource("2_mllay")
+shader_parameter/light_strength = 0.10000000475
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rgqit"]
+texture = ExtResource("1_7mcqq")
+texture_margin_left = 12.043108
+texture_margin_top = 11.845263
+texture_margin_right = 11.647419
+region_rect = Rect2(0, 0, 80, 58.218178)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jh3h8"]
+bg_color = Color(0.9490196, 0.9490196, 0.9490196, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgqit"]
+bg_color = Color(0.9490196, 0.9490196, 0.9490196, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hxcvl"]
+bg_color = Color(0.9490196, 0.9490196, 0.9490196, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xjwmb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jshro"]
+bg_color = Color(0.8474744, 0.84747446, 0.8474743, 1)
+border_width_top = 8
+border_color = Color(0.6830765, 0.68307775, 0.68307656, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jshro"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xjwmb"]
+content_margin_top = 8.0
+texture = ExtResource("4_1gs8c")
+texture_margin_left = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(0, 13.402739, 83.56648, 70.59726)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jshro"]
+texture = ExtResource("4_1gs8c")
+texture_margin_left = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(0, 17.46079, 84, 66.53921)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mllay"]
+texture = ExtResource("5_wmufy")
+texture_margin_left = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(0, 18.766565, 84, 65.23344)
+
+[node name="PlanificationCaseLite" type="VBoxContainer" unique_id=529684210]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+script = ExtResource("1_jh3h8")
+
+[node name="HeadingPanel" type="PanelContainer" parent="." unique_id=360657801]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_l0lka")
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rgqit")
+
+[node name="MarginContainer" type="MarginContainer" parent="HeadingPanel" unique_id=944278257]
+layout_mode = 2
+theme_override_constants/margin_top = -4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HeadingPanel/MarginContainer" unique_id=715059829]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Heading" type="Label" parent="HeadingPanel/MarginContainer/VBoxContainer" unique_id=214002874]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Group Code"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HeadingPanel/MarginContainer/VBoxContainer/Heading" unique_id=2124904719]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -77.04309
+offset_top = -13.845263
+offset_right = 2.9569092
+offset_bottom = 26.154737
+grow_horizontal = 0
+alignment = 2
+
+[node name="RetroactionButton" type="Button" parent="HeadingPanel/MarginContainer/VBoxContainer/Heading/HBoxContainer" unique_id=2110961837]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+theme = ExtResource("5_mllay")
+icon = ExtResource("4_wmufy")
+expand_icon = true
+
+[node name="DetailsButton" type="Button" parent="HeadingPanel/MarginContainer/VBoxContainer/Heading/HBoxContainer" unique_id=537297148]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+theme = ExtResource("5_mllay")
+icon = ExtResource("4_xjwmb")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MenuButton" type="Button" parent="HeadingPanel/MarginContainer/VBoxContainer/Heading/HBoxContainer" unique_id=1481794153]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+tooltip_text = "Ouvrir menu déroulant 
+(options de décalage)"
+mouse_default_cursor_shape = 2
+theme = ExtResource("5_mllay")
+icon = ExtResource("6_jshro")
+icon_alignment = 1
+expand_icon = true
+
+[node name="TitleLineEdit" type="LineEdit" parent="HeadingPanel/MarginContainer/VBoxContainer" unique_id=1026354956]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_jh3h8")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_rgqit")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hxcvl")
+placeholder_text = "Titre"
+max_length = 24
+flat = true
+
+[node name="HSeparator" type="HSeparator" parent="HeadingPanel/MarginContainer/VBoxContainer" unique_id=201136827]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xjwmb")
+
+[node name="HardLine" type="HSeparator" parent="." unique_id=1771379684]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxFlat_jshro")
+
+[node name="LinedTextEdit" type="PanelContainer" parent="." unique_id=1404561943]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jshro")
+
+[node name="PlanifTextEdit" type="TextEdit" parent="LinedTextEdit" unique_id=2091163333]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxTexture_xjwmb")
+theme_override_styles/focus = SubResource("StyleBoxTexture_jshro")
+theme_override_styles/read_only = SubResource("StyleBoxTexture_mllay")
+wrap_mode = 1
+scroll_fit_content_height = true
+
+[node name="MarginContainer" type="MarginContainer" parent="LinedTextEdit" unique_id=1804632848]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 0
+
+[node name="PlanifRichTextLabel" type="RichTextLabel" parent="LinedTextEdit/MarginContainer" unique_id=2029818081]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.2, 0.2, 0.2, 0.39215687)
+theme_override_constants/line_separation = 0
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 1
+
+[connection signal="pressed" from="HeadingPanel/MarginContainer/VBoxContainer/Heading/HBoxContainer/RetroactionButton" to="." method="_on_retroaction_button_pressed"]
+[connection signal="pressed" from="HeadingPanel/MarginContainer/VBoxContainer/Heading/HBoxContainer/DetailsButton" to="." method="_on_details_button_pressed"]
+[connection signal="pressed" from="HeadingPanel/MarginContainer/VBoxContainer/Heading/HBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="text_changed" from="HeadingPanel/MarginContainer/VBoxContainer/TitleLineEdit" to="." method="_on_title_line_edit_text_changed"]
+[connection signal="text_changed" from="LinedTextEdit/PlanifTextEdit" to="." method="_on_planif_text_edit_text_changed"]

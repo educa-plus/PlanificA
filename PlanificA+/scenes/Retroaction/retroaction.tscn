@@ -1,0 +1,337 @@
+[gd_scene load_steps=7 format=3 uid="uid://v77fq2axts8v"]
+
+[ext_resource type="Script" uid="uid://chdnjdswykrbh" path="res://scenes/Retroaction/retroaction.gd" id="1_vt2y5"]
+[ext_resource type="Texture2D" uid="uid://be10ykdg0f86y" path="res://assets/five_starsV2.png" id="2_vt2y5"]
+[ext_resource type="Theme" uid="uid://b0y6xcq1tdygf" path="res://_theme/button-primary.tres" id="3_adf3c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r1grg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vt2y5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_adf3c"]
+texture = ExtResource("2_vt2y5")
+region_rect = Rect2(6.05789, 115.362, 280.956, 57.9869)
+
+[node name="RetroactionPanel" type="PanelContainer"]
+custom_minimum_size = Vector2(800, 400)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -317.0
+offset_right = 400.0
+offset_bottom = 318.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vt2y5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Heading" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Êtes-vous satisfait du cours du 12 août 2025 période 1  ?"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_r1grg")
+
+[node name="Objectif" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Objectif"]
+custom_minimum_size = Vector2(400, 42)
+layout_mode = 2
+theme_override_font_sizes/bold_italics_font_size = 16
+theme_override_font_sizes/italics_font_size = 16
+theme_override_font_sizes/mono_font_size = 16
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 16
+bbcode_enabled = true
+text = "Objectifs d'apprentissage
+[font_size=12](Les élèves ont-ils appris ce que vous souhaitiez leur apprendre ?)[/font_size]"
+
+[node name="Stars" type="PanelContainer" parent="VBoxContainer/Objectif"]
+custom_minimum_size = Vector2(220, 40)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vt2y5")
+
+[node name="learning_objective" type="HSplitContainer" parent="VBoxContainer/Objectif/Stars" groups=["split_container_nodes"]]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+split_offset = 110
+dragger_visibility = 1
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Objectif/Stars/learning_objective"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+color = Color(0.968349, 0.846926, 0.210686, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/Objectif/Stars/learning_objective"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Objectif/Stars"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_adf3c")
+
+[node name="HSeparator6" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="GestionDeClasse" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/GestionDeClasse"]
+custom_minimum_size = Vector2(400, 42)
+layout_mode = 2
+theme_override_font_sizes/bold_italics_font_size = 16
+theme_override_font_sizes/italics_font_size = 16
+theme_override_font_sizes/mono_font_size = 16
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 16
+bbcode_enabled = true
+text = "Gestion de classe
+[font_size=12](Vos limites ont-elles été respectées ?)[/font_size]"
+
+[node name="Stars" type="PanelContainer" parent="VBoxContainer/GestionDeClasse"]
+custom_minimum_size = Vector2(220, 40)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vt2y5")
+
+[node name="classroom_management" type="HSplitContainer" parent="VBoxContainer/GestionDeClasse/Stars" groups=["split_container_nodes"]]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+split_offset = 110
+dragger_visibility = 1
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/GestionDeClasse/Stars/classroom_management"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+color = Color(0.968627, 0.847059, 0.211765, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/GestionDeClasse/Stars/classroom_management"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/GestionDeClasse/Stars"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_adf3c")
+
+[node name="HSeparator5" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Motivation" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Motivation"]
+custom_minimum_size = Vector2(400, 42)
+layout_mode = 2
+theme_override_font_sizes/bold_italics_font_size = 16
+theme_override_font_sizes/italics_font_size = 16
+theme_override_font_sizes/mono_font_size = 16
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 16
+bbcode_enabled = true
+text = "Motivation
+[font_size=12](Les élèves étaient-ils heureux d'assister au cours ?)[/font_size]"
+
+[node name="Stars" type="PanelContainer" parent="VBoxContainer/Motivation"]
+custom_minimum_size = Vector2(220, 40)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vt2y5")
+
+[node name="motivation" type="HSplitContainer" parent="VBoxContainer/Motivation/Stars" groups=["split_container_nodes"]]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+split_offset = 110
+dragger_visibility = 1
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Motivation/Stars/motivation"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+color = Color(0.968627, 0.847059, 0.211765, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/Motivation/Stars/motivation"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Motivation/Stars"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_adf3c")
+
+[node name="HSeparator4" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Relation" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Relation"]
+custom_minimum_size = Vector2(400, 42)
+layout_mode = 2
+theme_override_font_sizes/bold_italics_font_size = 16
+theme_override_font_sizes/italics_font_size = 16
+theme_override_font_sizes/mono_font_size = 16
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 16
+bbcode_enabled = true
+text = "Relations positives
+[font_size=12](Tous les élèves se sentent-ils à l'aise dans la classe ?)[/font_size]"
+
+[node name="Stars" type="PanelContainer" parent="VBoxContainer/Relation"]
+custom_minimum_size = Vector2(220, 40)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vt2y5")
+
+[node name="positive_relations" type="HSplitContainer" parent="VBoxContainer/Relation/Stars" groups=["split_container_nodes"]]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+split_offset = 110
+dragger_visibility = 1
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Relation/Stars/positive_relations"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+color = Color(0.968627, 0.847059, 0.211765, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/Relation/Stars/positive_relations"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Relation/Stars"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_adf3c")
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Preparation" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Preparation"]
+custom_minimum_size = Vector2(400, 42)
+layout_mode = 2
+theme_override_font_sizes/bold_italics_font_size = 16
+theme_override_font_sizes/italics_font_size = 16
+theme_override_font_sizes/mono_font_size = 16
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 16
+bbcode_enabled = true
+text = "Préparation
+[font_size=12](Étiez-vous suffisamment préparé ?)[/font_size]"
+
+[node name="Stars" type="PanelContainer" parent="VBoxContainer/Preparation"]
+custom_minimum_size = Vector2(220, 40)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vt2y5")
+
+[node name="preparation" type="HSplitContainer" parent="VBoxContainer/Preparation/Stars" groups=["split_container_nodes"]]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+split_offset = 110
+dragger_visibility = 1
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Preparation/Stars/preparation"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+color = Color(0.968627, 0.847059, 0.211765, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/Preparation/Stars/preparation"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Preparation/Stars"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_adf3c")
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GoodAndBad" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Good" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/GoodAndBad"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/GoodAndBad/Good"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Bon coup"
+horizontal_alignment = 1
+
+[node name="Good" type="TextEdit" parent="VBoxContainer/ScrollContainer/VBoxContainer/GoodAndBad/Good" groups=["text_edit_nodes"]]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Bad" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/GoodAndBad"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/GoodAndBad/Bad"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Mauvais coup"
+horizontal_alignment = 1
+
+[node name="Bad" type="TextEdit" parent="VBoxContainer/ScrollContainer/VBoxContainer/GoodAndBad/Bad" groups=["text_edit_nodes"]]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="General" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/General"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Changeriez-vous quelque chose à ce cours ? Si oui, quoi ?"
+horizontal_alignment = 1
+
+[node name="Commentary" type="TextEdit" parent="VBoxContainer/ScrollContainer/VBoxContainer/General" groups=["text_edit_nodes"]]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+wrap_mode = 1
+
+[node name="Buttons" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Erase" type="Button" parent="VBoxContainer/Buttons"]
+layout_mode = 2
+theme = ExtResource("3_adf3c")
+theme_override_font_sizes/font_size = 16
+text = "Effacer"
+
+[node name="Next" type="Button" parent="VBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("3_adf3c")
+theme_override_font_sizes/font_size = 16
+text = "Suivant"
+
+[connection signal="pressed" from="VBoxContainer/Buttons/Erase" to="." method="_on_erase_pressed"]
+[connection signal="pressed" from="VBoxContainer/Buttons/Next" to="." method="_on_next_pressed"]

@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2y38uymvl2mk"]
+
+[ext_resource type="Script" uid="uid://c34ltpqpela5u" path="res://scenes/Sequences/sequence_box.gd" id="1_y822f"]
+[ext_resource type="Script" uid="uid://bp26g6y8wqo3h" path="res://addons/ReorderableContainer/reorderable_vbox.gd" id="2_ptngp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xa4m6"]
+
+[node name="SequenceBox" type="PanelContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 83.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xa4m6")
+script = ExtResource("1_y822f")
+
+[node name="FoldableContainer" type="FoldableContainer" parent="."]
+layout_mode = 2
+folded = true
+title = "test"
+
+[node name="ReorderableVBox" type="Container" parent="FoldableContainer"]
+process_mode = 1
+visible = false
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+script = ExtResource("2_ptngp")
+hold_duration = 0.1
+is_vertical = true
+metadata/_custom_type_script = "uid://bp26g6y8wqo3h"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="CheckBox" type="CheckBox" parent="Control"]
+layout_mode = 0
+offset_left = -30.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 30.0
+flat = true
+
+[connection signal="reordered" from="FoldableContainer/ReorderableVBox" to="." method="_on_reorderable_v_box_reordered"]
+[connection signal="sort_children" from="FoldableContainer/ReorderableVBox" to="FoldableContainer/ReorderableVBox" method="_on_sort_children"]
+[connection signal="toggled" from="Control/CheckBox" to="." method="_on_check_box_toggled"]

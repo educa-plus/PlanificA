@@ -1,0 +1,373 @@
+[gd_scene format=3 uid="uid://cn0n6njo4ktb0"]
+
+[ext_resource type="Script" uid="uid://d210i1m4gk8w4" path="res://scenes/ClassroomManager/classroom_manager.gd" id="1_pptfy"]
+[ext_resource type="Theme" uid="uid://b0y6xcq1tdygf" path="res://_theme/button-primary.tres" id="2_1ngdq"]
+[ext_resource type="Script" uid="uid://bo0qhpxab16jm" path="res://addons/tnowe_extra_controls/elements/interpolated_container/interpolated_free_container.gd" id="3_1ngdq"]
+[ext_resource type="Script" uid="uid://sr8ymsdednqu" path="res://addons/tnowe_extra_controls/elements/multi_selection.gd" id="3_2dkhe"]
+[ext_resource type="Texture2D" uid="uid://cbkseb3bxxh7s" path="res://_theme/_icons/MenuIcon.png" id="4_fuonr"]
+[ext_resource type="PackedScene" uid="uid://mkhahy05e4oo" path="res://scenes/ClassroomManager/ClassManagerItems/simple_desk_item.tscn" id="5_fdujs"]
+[ext_resource type="Texture2D" uid="uid://fq7b2eesftsd" path="res://assets/simple_desk.png" id="5_vx7ye"]
+[ext_resource type="Theme" uid="uid://ffjylg2o1cnn" path="res://_theme/icons_button.tres" id="6_lpbw0"]
+[ext_resource type="Texture2D" uid="uid://43uwup7l4ev4" path="res://assets/double_desk.png" id="8_eiubj"]
+[ext_resource type="Texture2D" uid="uid://d3nn8umfnrkgc" path="res://_theme/_icons/XIcon.png" id="10_ce8rp"]
+[ext_resource type="Script" uid="uid://b3cevwtolck7v" path="res://scenes/ClassroomManager/items_menu.gd" id="10_fdujs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fuonr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2, 0.2, 0.2, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eiubj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2, 0.2, 0.2, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce8rp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.485703, 0.485704, 0.485703, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdujs"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.486275, 0.486275, 0.486275, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2dkhe"]
+
+[node name="ClassroomManager" type="PanelContainer" unique_id=1351844639]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pptfy")
+
+[node name="MainVbox" type="VBoxContainer" parent="." unique_id=2084118530]
+layout_mode = 2
+
+[node name="OptionsManager" type="HBoxContainer" parent="MainVbox" unique_id=1211338929]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="GroupSelector" type="OptionButton" parent="MainVbox/OptionsManager" unique_id=1207906404]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_1ngdq")
+
+[node name="EditionModeSelector" type="CheckButton" parent="MainVbox/OptionsManager" unique_id=1162814488]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_1ngdq")
+text = "Mode édition"
+
+[node name="DeskSizeSelector" type="OptionButton" parent="MainVbox/OptionsManager" unique_id=1445367224]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_1ngdq")
+
+[node name="OrientationSelector" type="OptionButton" parent="MainVbox/OptionsManager" unique_id=1124600830]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_1ngdq")
+
+[node name="BackgroundSelector" type="OptionButton" parent="MainVbox/OptionsManager" unique_id=1996844758]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_1ngdq")
+
+[node name="ItemExpander" type="Button" parent="MainVbox/OptionsManager" unique_id=1163330039]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+theme = ExtResource("6_lpbw0")
+icon = ExtResource("4_fuonr")
+expand_icon = true
+
+[node name="ClassConstructor" type="HBoxContainer" parent="MainVbox" unique_id=1208520899]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GraphEdit" type="GraphEdit" parent="MainVbox/ClassConstructor" unique_id=1351854808]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/grid_major = Color(0.2, 0.2, 0.2, 0.39215687)
+theme_override_colors/grid_minor = Color(0.2, 0.2, 0.2, 0.09411765)
+theme_override_styles/panel = SubResource("StyleBoxFlat_fuonr")
+minimap_enabled = false
+show_minimap_button = false
+show_arrange_button = false
+
+[node name="GraphFrame" type="GraphFrame" parent="MainVbox/ClassConstructor/GraphEdit" unique_id=2140888551]
+layout_mode = 0
+offset_left = 416.95688
+offset_top = 201.15474
+offset_right = 602.9569
+offset_bottom = 373.15472
+mouse_filter = 1
+position_offset = Vector2(416.95688, 201.15474)
+tint_color_enabled = true
+tint_color = Color(0.3019608, 0.3019608, 0.3019608, 0)
+
+[node name="SimpleDesk" parent="MainVbox/ClassConstructor/GraphEdit/GraphFrame" unique_id=1090661390 instance=ExtResource("5_fdujs")]
+layout_mode = 2
+
+[node name="GraphNode" type="GraphNode" parent="MainVbox/ClassConstructor/GraphEdit" unique_id=616334213]
+visible = false
+layout_mode = 0
+offset_left = 182.9569
+offset_top = 221.15474
+offset_right = 368.9569
+offset_bottom = 393.15472
+mouse_filter = 1
+position_offset = Vector2(182.9569, 221.15474)
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+
+[node name="SimpleDesk" parent="MainVbox/ClassConstructor/GraphEdit/GraphNode" unique_id=1660741667 instance=ExtResource("5_fdujs")]
+layout_mode = 2
+
+[node name="ClassManagerPanel" type="PanelContainer" parent="MainVbox/ClassConstructor" unique_id=2078428719 node_paths=PackedStringArray("targets")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_eiubj")
+script = ExtResource("3_2dkhe")
+targets = [NodePath("ClassManager")]
+style_selection_box = SubResource("StyleBoxFlat_ce8rp")
+style_selected = SubResource("StyleBoxFlat_fdujs")
+modifier_key = 4194326
+
+[node name="ClassBackGround" type="TextureRect" parent="MainVbox/ClassConstructor/ClassManagerPanel" unique_id=1765546803]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0.39215687)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 1
+
+[node name="ClassManager" type="Container" parent="MainVbox/ClassConstructor/ClassManagerPanel" unique_id=972018481]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("3_1ngdq")
+drop_color = Color(0.501961, 0.501961, 0.501961, 0)
+metadata/_custom_type_script = "uid://bo0qhpxab16jm"
+
+[node name="ItemsMenuAll" type="VBoxContainer" parent="MainVbox/ClassConstructor" unique_id=649968951]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+script = ExtResource("10_fdujs")
+
+[node name="Categories" type="HBoxContainer" parent="MainVbox/ClassConstructor/ItemsMenuAll" unique_id=1316417809]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="MainVbox/ClassConstructor/ItemsMenuAll/Categories" unique_id=1748939839 groups=["tab_buttons"]]
+layout_mode = 2
+toggle_mode = true
+text = "A"
+
+[node name="Button2" type="Button" parent="MainVbox/ClassConstructor/ItemsMenuAll/Categories" unique_id=77710817 groups=["tab_buttons"]]
+layout_mode = 2
+toggle_mode = true
+text = "B"
+
+[node name="Button3" type="Button" parent="MainVbox/ClassConstructor/ItemsMenuAll/Categories" unique_id=1599791868 groups=["tab_buttons"]]
+layout_mode = 2
+toggle_mode = true
+text = "C"
+
+[node name="MenuPanel" type="PanelContainer" parent="MainVbox/ClassConstructor/ItemsMenuAll" unique_id=1037426342]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ItemScroll" type="ScrollContainer" parent="MainVbox/ClassConstructor/ItemsMenuAll/MenuPanel" unique_id=2008127167]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="ItemsMenu" type="VBoxContainer" parent="MainVbox/ClassConstructor/ItemsMenuAll/MenuPanel/ItemScroll" unique_id=1681879685]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="SimpleDesk" type="Button" parent="MainVbox/ClassConstructor/ItemsMenuAll/MenuPanel/ItemScroll/ItemsMenu" unique_id=2053734971]
+custom_minimum_size = Vector2(140, 80)
+layout_mode = 2
+toggle_mode = true
+icon = ExtResource("5_vx7ye")
+icon_alignment = 1
+expand_icon = true
+
+[node name="HSeparator" type="HSeparator" parent="MainVbox/ClassConstructor/ItemsMenuAll/MenuPanel/ItemScroll/ItemsMenu" unique_id=1914562335]
+layout_mode = 2
+
+[node name="DoubleDesk" type="Button" parent="MainVbox/ClassConstructor/ItemsMenuAll/MenuPanel/ItemScroll/ItemsMenu" unique_id=508207706]
+custom_minimum_size = Vector2(140, 80)
+layout_mode = 2
+toggle_mode = true
+icon = ExtResource("8_eiubj")
+expand_icon = true
+
+[node name="HSeparator" type="HSeparator" parent="MainVbox/ClassConstructor/ItemsMenuAll" unique_id=1533500552]
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2dkhe")
+
+[node name="ModelsPanel" type="PanelContainer" parent="MainVbox/ClassConstructor/ItemsMenuAll" unique_id=1781543300]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainVbox/ClassConstructor/ItemsMenuAll/ModelsPanel" unique_id=499372686]
+layout_mode = 2
+
+[node name="Heading" type="Label" parent="MainVbox/ClassConstructor/ItemsMenuAll/ModelsPanel/VBoxContainer" unique_id=1202101234]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Plans de classe"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainVbox/ClassConstructor/ItemsMenuAll/ModelsPanel/VBoxContainer" unique_id=356757070]
+custom_minimum_size = Vector2(0, 140)
+layout_mode = 2
+
+[node name="ClassPlanVbox" type="VBoxContainer" parent="MainVbox/ClassConstructor/ItemsMenuAll/ModelsPanel/VBoxContainer/ScrollContainer" unique_id=616303764]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AddClassPlan" type="Button" parent="MainVbox/ClassConstructor/ItemsMenuAll/ModelsPanel/VBoxContainer" unique_id=248932642]
+layout_mode = 2
+theme = ExtResource("2_1ngdq")
+text = "Ajouter plan de classe"
+
+[node name="Control" type="Control" parent="." unique_id=1874147352]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="SaveButton" type="Button" parent="Control" unique_id=763378488]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -47.0
+offset_right = 142.0
+offset_bottom = -8.0
+grow_vertical = 0
+theme = ExtResource("2_1ngdq")
+theme_override_font_sizes/font_size = 16
+text = "Sauvegarder"
+expand_icon = true
+
+[node name="Button" type="Button" parent="Control" unique_id=1403249131]
+layout_mode = 0
+offset_left = 156.0
+offset_top = -53.0
+offset_right = 417.0
+offset_bottom = -9.0
+text = "populate class"
+
+[node name="ControlChooseName" type="Control" parent="." unique_id=1746659797]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="ChooseName" type="PanelContainer" parent="ControlChooseName" unique_id=1595340855]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = -48.0
+offset_right = 184.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ControlChooseName/ChooseName" unique_id=30758841]
+layout_mode = 2
+
+[node name="ChooseNameStatement" type="Label" parent="ControlChooseName/ChooseName/VBoxContainer" unique_id=1873388069]
+layout_mode = 2
+text = "Comment voulez-vous nommer ce plan de classe ?"
+
+[node name="LineEditChooseName" type="LineEdit" parent="ControlChooseName/ChooseName/VBoxContainer" unique_id=1830788406]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Une fois terminé, appuyez sur « Entrer »"
+alignment = 1
+max_length = 20
+
+[node name="Button" type="Button" parent="ControlChooseName" unique_id=796645966]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 164.0
+offset_top = -45.0
+offset_right = 180.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_lpbw0")
+icon = ExtResource("10_ce8rp")
+expand_icon = true
+
+[connection signal="item_selected" from="MainVbox/OptionsManager/GroupSelector" to="." method="_on_group_selector_item_selected"]
+[connection signal="toggled" from="MainVbox/OptionsManager/EditionModeSelector" to="." method="_on_edition_mode_selector_toggled"]
+[connection signal="item_selected" from="MainVbox/OptionsManager/DeskSizeSelector" to="." method="_on_desk_size_selector_item_selected"]
+[connection signal="item_selected" from="MainVbox/OptionsManager/OrientationSelector" to="." method="_on_orientation_selector_item_selected"]
+[connection signal="item_selected" from="MainVbox/OptionsManager/BackgroundSelector" to="." method="_on_background_selector_item_selected"]
+[connection signal="pressed" from="MainVbox/OptionsManager/ItemExpander" to="." method="_on_item_expander_pressed"]
+[connection signal="toggled" from="MainVbox/ClassConstructor/ItemsMenuAll/MenuPanel/ItemScroll/ItemsMenu/SimpleDesk" to="MainVbox/ClassConstructor/ItemsMenuAll" method="_on_simple_desk_toggled"]
+[connection signal="toggled" from="MainVbox/ClassConstructor/ItemsMenuAll/MenuPanel/ItemScroll/ItemsMenu/DoubleDesk" to="MainVbox/ClassConstructor/ItemsMenuAll" method="_on_double_desk_toggled"]
+[connection signal="pressed" from="MainVbox/ClassConstructor/ItemsMenuAll/ModelsPanel/VBoxContainer/AddClassPlan" to="." method="_on_add_class_plan_pressed"]
+[connection signal="pressed" from="Control/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="text_submitted" from="ControlChooseName/ChooseName/VBoxContainer/LineEditChooseName" to="." method="_on_line_edit_choose_name_text_submitted"]

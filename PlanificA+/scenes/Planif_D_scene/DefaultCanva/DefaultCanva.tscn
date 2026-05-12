@@ -1,0 +1,759 @@
+[gd_scene format=3 uid="uid://dhdyael6sy6wk"]
+
+[ext_resource type="Script" uid="uid://ddtneeblualds" path="res://scenes/Planif_D_scene/DefaultCanva/default_canva.gd" id="1_nx2o6"]
+[ext_resource type="Theme" uid="uid://ffjylg2o1cnn" path="res://_theme/icons_button.tres" id="2_0sff1"]
+[ext_resource type="Theme" uid="uid://b0y6xcq1tdygf" path="res://_theme/button-primary.tres" id="2_c6p6g"]
+[ext_resource type="Texture2D" uid="uid://d3nn8umfnrkgc" path="res://_theme/_icons/XIcon.png" id="2_yv5pw"]
+[ext_resource type="Texture2D" uid="uid://br43jso5pigmv" path="res://_theme/_assets/option-button-carret.png" id="3_yv5pw"]
+[ext_resource type="PackedScene" uid="uid://bhnv4h6m0nuix" path="res://scenes/Planif_D_scene/Custom_Planification/custom_canva_no_control.tscn" id="4_0sff1"]
+[ext_resource type="Script" uid="uid://sciooika2xgy" path="res://scenes/Planif_D_scene/DefaultCanva/class_by.gd" id="4_1h3gy"]
+[ext_resource type="Script" uid="uid://b6fe6rg7n303u" path="res://scenes/Planif_D_scene/DefaultCanva/sequence_option.gd" id="6_gt4mo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nx2o6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0sff1"]
+
+[node name="DefaultCanva" type="Control" unique_id=421825368]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nx2o6")
+
+[node name="EveryThing" type="HBoxContainer" parent="." unique_id=1427530067]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Canva_Planif" type="MarginContainer" parent="EveryThing" unique_id=792585814]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="EveryThing/Canva_Planif" unique_id=1977613760]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="SubViewport" type="SubViewport" parent="EveryThing/Canva_Planif/SubViewportContainer" unique_id=1823426220]
+handle_input_locally = false
+render_target_update_mode = 0
+
+[node name="Canva_De_Planif" type="ScrollContainer" parent="EveryThing/Canva_Planif" unique_id=923368506]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Planification" type="VBoxContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif" unique_id=1379063614]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 5
+
+[node name="title" type="LineEdit" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification" unique_id=1522770383 groups=["Title"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+placeholder_text = "Titre"
+alignment = 1
+max_length = 24
+
+[node name="InfoGenerale" type="HBoxContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification" unique_id=1459174775]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="InfoGenerale" type="PanelContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale" unique_id=1954899836]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NivGrDis2" type="VBoxContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale" unique_id=82787260]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NivGrDis" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale/NivGrDis2" unique_id=912281611]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Groupe, niveau, discipline"
+
+[node name="PanelContainer" type="PanelContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale/NivGrDis2" unique_id=55975327]
+layout_mode = 2
+
+[node name="GoupLabel" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale/NivGrDis2/PanelContainer" unique_id=1448223785]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Control" type="Control" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale" unique_id=1495575104]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Button" type="Button" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale/Control" unique_id=1788428878]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 12.0
+offset_top = -10.0
+offset_right = 26.0
+offset_bottom = 10.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 8
+text = "C"
+
+[node name="MarginContainer" type="MarginContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale" unique_id=423342091]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 0
+
+[node name="VSeparator" type="VSeparator" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale" unique_id=2002364945 groups=["Separator"]]
+layout_mode = 2
+
+[node name="InfoGenerale2" type="PanelContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale" unique_id=1812262465]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DatPerDur" type="HBoxContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale2" unique_id=408990137]
+layout_mode = 2
+
+[node name="Date" type="VBoxContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale2/DatPerDur" unique_id=727485926]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DatPerDur" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale2/DatPerDur/Date" unique_id=249740373]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Date"
+
+[node name="PanelContainer" type="PanelContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale2/DatPerDur/Date" unique_id=2044331872]
+layout_mode = 2
+
+[node name="Date" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale2/DatPerDur/Date/PanelContainer" unique_id=474473917]
+layout_mode = 2
+
+[node name="Période" type="VBoxContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale2/DatPerDur" unique_id=691309492]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DatPerDur" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale2/DatPerDur/Période" unique_id=1051959542]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Période"
+
+[node name="PanelContainer" type="PanelContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale2/DatPerDur/Période" unique_id=343276059]
+layout_mode = 2
+
+[node name="PeriodLabel" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale2/DatPerDur/Période/PanelContainer" unique_id=1312810838]
+layout_mode = 2
+
+[node name="Durée" type="VBoxContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale2/DatPerDur" unique_id=1589130615]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Dur" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale2/DatPerDur/Durée" unique_id=1743078525]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Durée"
+
+[node name="PanelContainer" type="PanelContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale2/DatPerDur/Durée" unique_id=533864051]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale2/DatPerDur/Durée/PanelContainer" unique_id=922914485]
+layout_mode = 2
+
+[node name="Local" type="VBoxContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale2/DatPerDur" unique_id=2058949430]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DatPerDur" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale2/DatPerDur/Local" unique_id=250566256]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Local"
+
+[node name="PanelContainer" type="PanelContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale2/DatPerDur/Local" unique_id=1958842605]
+layout_mode = 2
+
+[node name="LocalLabel" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale2/DatPerDur/Local/PanelContainer" unique_id=71168491]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification" unique_id=1330691901 groups=["Separator"]]
+visible = false
+layout_mode = 2
+
+[node name="InfoPedagogie" type="PanelContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification" unique_id=712228151]
+layout_mode = 2
+
+[node name="InfoPedagogie" type="VBoxContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoPedagogie" unique_id=1689953576]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="NotionsPDA" type="HBoxContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoPedagogie/InfoPedagogie" unique_id=2005203804]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Notions" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoPedagogie/InfoPedagogie/NotionsPDA" unique_id=434357810]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Notions :"
+
+[node name="MenuButton" type="MenuButton" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoPedagogie/InfoPedagogie/NotionsPDA" unique_id=387135131]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Test"
+item_count = 1
+popup/item_0/text = "Item 1"
+popup/item_0/id = 0
+
+[node name="Notions2" type="TextEdit" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoPedagogie/InfoPedagogie/NotionsPDA" unique_id=872880674 groups=["TextEdit"]]
+layout_mode = 2
+size_flags_horizontal = 3
+editable = false
+
+[node name="Control" type="Control" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoPedagogie/InfoPedagogie/NotionsPDA" unique_id=1586067537]
+layout_mode = 2
+
+[node name="ClearButton" type="Button" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoPedagogie/InfoPedagogie/NotionsPDA/Control" unique_id=808302833 groups=["Clear_button"]]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = -25.0
+offset_top = 1.0
+offset_right = -5.0
+offset_bottom = 21.0
+theme = ExtResource("2_0sff1")
+icon = ExtResource("2_yv5pw")
+expand_icon = true
+
+[node name="Competences" type="HBoxContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoPedagogie/InfoPedagogie" unique_id=839110914]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Comp" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoPedagogie/InfoPedagogie/Competences" unique_id=726524195]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Compétences :"
+
+[node name="Competences" type="TextEdit" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoPedagogie/InfoPedagogie/Competences" unique_id=2066913313 groups=["TextEdit"]]
+layout_mode = 2
+size_flags_horizontal = 3
+editable = false
+
+[node name="Control" type="Control" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoPedagogie/InfoPedagogie/Competences" unique_id=158696814]
+layout_mode = 2
+
+[node name="ClearButton" type="Button" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoPedagogie/InfoPedagogie/Competences/Control" unique_id=1406982131 groups=["Clear_button"]]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = -25.0
+offset_top = 1.0
+offset_right = -5.0
+offset_bottom = 21.0
+theme = ExtResource("2_0sff1")
+icon = ExtResource("2_yv5pw")
+expand_icon = true
+
+[node name="DomGen" type="HBoxContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoPedagogie/InfoPedagogie" unique_id=1161165503]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DGF" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoPedagogie/InfoPedagogie/DomGen" unique_id=1953602142]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+tooltip_text = "Domaine général de formation"
+mouse_filter = 0
+text = "Domaine généraux
+de formation :"
+
+[node name="DGF2" type="TextEdit" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoPedagogie/InfoPedagogie/DomGen" unique_id=1880758688 groups=["TextEdit"]]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+editable = false
+
+[node name="Control" type="Control" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoPedagogie/InfoPedagogie/DomGen" unique_id=1105317391]
+layout_mode = 2
+
+[node name="ClearButton" type="Button" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoPedagogie/InfoPedagogie/DomGen/Control" unique_id=1097518416 groups=["Clear_button"]]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = -25.0
+offset_top = 1.0
+offset_right = -5.0
+offset_bottom = 21.0
+theme = ExtResource("2_0sff1")
+icon = ExtResource("2_yv5pw")
+expand_icon = true
+
+[node name="HSeparator3" type="HSeparator" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification" unique_id=1100714197 groups=["Separator"]]
+visible = false
+layout_mode = 2
+
+[node name="VBigBox" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification" unique_id=1327159904 instance=ExtResource("4_0sff1")]
+layout_mode = 2
+
+[node name="InfoMateriel" type="PanelContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification" unique_id=68991719]
+visible = false
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Materiel" type="HBoxContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoMateriel" unique_id=1779795557]
+layout_mode = 2
+
+[node name="Materiel" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoMateriel/Materiel" unique_id=2043421348]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Matériel :"
+
+[node name="Materiel2" type="TextEdit" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoMateriel/Materiel" unique_id=121936352 groups=["TextEdit"]]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator" type="HSeparator" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification" unique_id=685616813 groups=["Separator"]]
+visible = false
+layout_mode = 2
+
+[node name="InfoCours" type="HBoxContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification" unique_id=673812712]
+visible = false
+layout_mode = 2
+
+[node name="InfoDeroulement" type="VBoxContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours" unique_id=1515806511]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InfoIntro" type="PanelContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement" unique_id=1042222521]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Intro" type="VBoxContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement/InfoIntro" unique_id=1597618986]
+layout_mode = 2
+
+[node name="Titre" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement/InfoIntro/Intro" unique_id=159297564]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Introduction"
+
+[node name="Intro2" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement/InfoIntro/Intro" unique_id=1245101817]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Routine :"
+
+[node name="Routine" type="TextEdit" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement/InfoIntro/Intro" unique_id=853641329]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Intro3" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement/InfoIntro/Intro" unique_id=313925483]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Amorce :"
+
+[node name="Amorce" type="TextEdit" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement/InfoIntro/Intro" unique_id=247608034]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Intro4" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement/InfoIntro/Intro" unique_id=604038902]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Réactivation des connaissances antérieures :"
+
+[node name="React" type="TextEdit" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement/InfoIntro/Intro" unique_id=513000299]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HSeparator4" type="HSeparator" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement" unique_id=1673616688 groups=["Separator"]]
+layout_mode = 2
+
+[node name="InfoDeroulement" type="PanelContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement" unique_id=2048515895]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Deroulement" type="VBoxContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement/InfoDeroulement" unique_id=1183567496]
+layout_mode = 2
+
+[node name="Titre" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement/InfoDeroulement/Deroulement" unique_id=5011197]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Déroulement"
+
+[node name="Intro2" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement/InfoDeroulement/Deroulement" unique_id=1369220206]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Activité d'apprentissage :"
+
+[node name="SA" type="TextEdit" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement/InfoDeroulement/Deroulement" unique_id=722500698]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Intro3" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement/InfoDeroulement/Deroulement" unique_id=201715796]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Méthode :"
+
+[node name="Methode" type="TextEdit" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement/InfoDeroulement/Deroulement" unique_id=1442052306]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Intro4" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement/InfoDeroulement/Deroulement" unique_id=359925145]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Consignes :"
+
+[node name="Consignes" type="TextEdit" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement/InfoDeroulement/Deroulement" unique_id=1183505967]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HSeparator5" type="HSeparator" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement" unique_id=994603764 groups=["Separator"]]
+layout_mode = 2
+
+[node name="InfoDeroulement2" type="PanelContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement" unique_id=815896730]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Conclusion" type="VBoxContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement/InfoDeroulement2" unique_id=1831434920]
+layout_mode = 2
+
+[node name="Titre" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement/InfoDeroulement2/Conclusion" unique_id=909892478]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Conclusion"
+
+[node name="Intro2" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement/InfoDeroulement2/Conclusion" unique_id=1479819719]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Retour sur les apprentissages :"
+
+[node name="Retour" type="TextEdit" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement/InfoDeroulement2/Conclusion" unique_id=2103565216]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Intro3" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement/InfoDeroulement2/Conclusion" unique_id=1488075435]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Rappels importants :"
+
+[node name="Rappels" type="TextEdit" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoDeroulement/InfoDeroulement2/Conclusion" unique_id=2026360728]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VSeparator" type="VSeparator" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours" unique_id=203053493 groups=["Separator"]]
+layout_mode = 2
+
+[node name="InfoGestion" type="PanelContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours" unique_id=496484675]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Gestion" type="VBoxContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoGestion" unique_id=1782951917]
+layout_mode = 2
+alignment = 2
+
+[node name="Titre" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoGestion/Gestion" unique_id=1434014796]
+layout_mode = 2
+text = "Gestion de classe"
+
+[node name="Gestion" type="TextEdit" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoGestion/Gestion" unique_id=702479131]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Ressources" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoGestion/Gestion" unique_id=2035072838]
+layout_mode = 2
+text = "Ressources :"
+
+[node name="Ressources2" type="TextEdit" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoGestion/Gestion" unique_id=1713358333]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Relations" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoGestion/Gestion" unique_id=151677288]
+layout_mode = 2
+text = "Relations :"
+
+[node name="Relation" type="TextEdit" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoGestion/Gestion" unique_id=1383554412]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Engagement" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoGestion/Gestion" unique_id=225124891]
+layout_mode = 2
+text = "Engagement :"
+
+[node name="Engagement2" type="TextEdit" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoGestion/Gestion" unique_id=56942171]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Interventions" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoGestion/Gestion" unique_id=680007586]
+layout_mode = 2
+text = "Interventions :"
+
+[node name="Intervention" type="TextEdit" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoCours/InfoGestion/Gestion" unique_id=1256213823]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Justification" type="PanelContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification" unique_id=1627069220]
+visible = false
+layout_mode = 2
+
+[node name="Justification" type="VBoxContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/Justification" unique_id=2080710661]
+layout_mode = 2
+
+[node name="Subheading" type="Label" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/Justification/Justification" unique_id=720967750]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Justifications"
+horizontal_alignment = 1
+
+[node name="Justification" type="TextEdit" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification/Justification/Justification" unique_id=1195292692]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="EveryThing/Canva_Planif/Canva_De_Planif/Planification" unique_id=712213394]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+
+[node name="BarreOption" type="PanelContainer" parent="EveryThing/Canva_Planif" unique_id=1962448201]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="Options" type="HBoxContainer" parent="EveryThing/Canva_Planif/BarreOption" unique_id=90168405]
+layout_mode = 2
+
+[node name="CreateSequence" type="Button" parent="EveryThing/Canva_Planif/BarreOption/Options" unique_id=1184726334]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_c6p6g")
+text = "Créer une séquence"
+
+[node name="SequenceOption" type="MenuButton" parent="EveryThing/Canva_Planif/BarreOption/Options" unique_id=358738647]
+layout_mode = 2
+theme = ExtResource("2_c6p6g")
+text = "Option de séquence"
+icon = ExtResource("3_yv5pw")
+flat = false
+icon_alignment = 2
+script = ExtResource("6_gt4mo")
+
+[node name="Export" type="Button" parent="EveryThing/Canva_Planif/BarreOption/Options" unique_id=78599856]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_c6p6g")
+text = "Exporter en image"
+
+[node name="FileDialog" type="FileDialog" parent="EveryThing/Canva_Planif/BarreOption/Options/Export" unique_id=393065298]
+auto_translate_mode = 1
+position = Vector2i(0, 36)
+force_native = true
+access = 2
+use_native_dialog = true
+
+[node name="ClassBy" type="MenuButton" parent="EveryThing/Canva_Planif/BarreOption/Options" unique_id=1633435471]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme = ExtResource("2_c6p6g")
+text = "Classer par"
+icon = ExtResource("3_yv5pw")
+flat = false
+alignment = 0
+icon_alignment = 2
+item_count = 1
+popup/item_0/text = "Année scolaire"
+popup/item_0/checkable = 1
+popup/item_0/id = 0
+script = ExtResource("4_1h3gy")
+
+[node name="FileDialog" type="FileDialog" parent="EveryThing/Canva_Planif/BarreOption/Options/ClassBy" unique_id=213333861]
+position = Vector2i(0, 36)
+force_native = true
+access = 2
+use_native_dialog = true
+
+[node name="EditMode" type="CheckButton" parent="EveryThing/Canva_Planif/BarreOption/Options" unique_id=641034390]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme = ExtResource("2_c6p6g")
+text = "Mode édition"
+
+[node name="Progress" type="HBoxContainer" parent="EveryThing/Canva_Planif/BarreOption/Options" unique_id=683432910]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="EveryThing/Canva_Planif/BarreOption/Options/Progress" unique_id=1543194071]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nx2o6")
+
+[node name="ProgressBar" type="ProgressBar" parent="EveryThing/Canva_Planif/BarreOption/Options/Progress/PanelContainer" unique_id=1929467294]
+custom_minimum_size = Vector2(200, 22)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+show_percentage = false
+
+[node name="Label" type="Label" parent="EveryThing/Canva_Planif/BarreOption/Options/Progress/PanelContainer" unique_id=817136787]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Progression de la planification"
+horizontal_alignment = 1
+
+[node name="WarningBox" type="PanelContainer" parent="." unique_id=528929398]
+visible = false
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="WarningBox" unique_id=1968135914]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VboxContainer" type="VBoxContainer" parent="WarningBox/MarginContainer" unique_id=967199055]
+layout_mode = 2
+
+[node name="WarningTitle" type="Label" parent="WarningBox/MarginContainer/VboxContainer" unique_id=1965669690]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Attention"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="WarningBox/MarginContainer/VboxContainer" unique_id=77067744]
+layout_mode = 2
+theme_override_constants/separation = 6
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0sff1")
+
+[node name="WarningMessageLabel" type="RichTextLabel" parent="WarningBox/MarginContainer/VboxContainer" unique_id=1740807950]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="WarningBox/MarginContainer/VboxContainer" unique_id=1380646637]
+layout_mode = 2
+theme_override_constants/separation = 6
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0sff1")
+
+[node name="Buttons" type="HBoxContainer" parent="WarningBox/MarginContainer/VboxContainer" unique_id=1935250922]
+layout_mode = 2
+
+[node name="No" type="Button" parent="WarningBox/MarginContainer/VboxContainer/Buttons" unique_id=1609122590]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("2_c6p6g")
+text = "Non"
+
+[node name="Yes" type="Button" parent="WarningBox/MarginContainer/VboxContainer/Buttons" unique_id=1245619718]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("2_c6p6g")
+text = "Oui"
+
+[node name="ChooseName" type="PanelContainer" parent="." unique_id=87983652]
+visible = false
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ChooseName" unique_id=716755513]
+layout_mode = 2
+
+[node name="ChooseNameStatement" type="Label" parent="ChooseName/VBoxContainer" unique_id=764435615]
+layout_mode = 2
+text = "Comment voulez-vous nommer ce gabarit ?"
+
+[node name="LineEdit" type="LineEdit" parent="ChooseName/VBoxContainer" unique_id=1910515906]
+layout_mode = 2
+placeholder_text = "Une fois terminé, appuyez sur « Entrer »"
+alignment = 1
+max_length = 30
+
+[connection signal="pressed" from="EveryThing/Canva_Planif/Canva_De_Planif/Planification/InfoGenerale/InfoGenerale/Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="EveryThing/Canva_Planif/BarreOption/Options/Export" to="." method="_on_export_pressed"]
+[connection signal="toggled" from="EveryThing/Canva_Planif/BarreOption/Options/EditMode" to="." method="_on_edit_mode_toggled"]

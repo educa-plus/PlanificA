@@ -1,0 +1,80 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo7r3oe1fdgli"]
+
+[ext_resource type="Script" uid="uid://btcg2rltsgng0" path="res://scenes/MainScene/main_scene.gd" id="1_y65c2"]
+[ext_resource type="Script" uid="uid://cqvlq0htqvrd6" path="res://scenes/MainScene/time_label.gd" id="2_1ka3p"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y65c2")
+
+[node name="EveryThing" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OptionsContainer" type="PanelContainer" parent="EveryThing"]
+layout_mode = 2
+
+[node name="OptionL" type="HBoxContainer" parent="EveryThing/OptionsContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 15
+
+[node name="HamburgerMenuL" type="Button" parent="EveryThing/OptionsContainer/OptionL"]
+layout_mode = 2
+text = "Menu"
+
+[node name="TimeInfos" type="VBoxContainer" parent="EveryThing/OptionsContainer/OptionL"]
+layout_mode = 2
+script = ExtResource("2_1ka3p")
+
+[node name="TimeLabel" type="Label" parent="EveryThing/OptionsContainer/OptionL/TimeInfos"]
+layout_mode = 2
+horizontal_alignment = 2
+
+[node name="DateLabel" type="Label" parent="EveryThing/OptionsContainer/OptionL/TimeInfos"]
+layout_mode = 2
+
+[node name="Logo" type="Button" parent="EveryThing/OptionsContainer/OptionL"]
+layout_mode = 2
+text = "Logo"
+
+[node name="OptionR" type="HBoxContainer" parent="EveryThing/OptionsContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 15
+alignment = 2
+
+[node name="Doc" type="Button" parent="EveryThing/OptionsContainer/OptionR"]
+layout_mode = 2
+text = "Doc"
+
+[node name="PlanifDetail" type="Button" parent="EveryThing/OptionsContainer/OptionR"]
+layout_mode = 2
+text = "Planification détaillée"
+
+[node name="PlanifMoyTerme" type="Button" parent="EveryThing/OptionsContainer/OptionR"]
+layout_mode = 2
+text = "Planifications à moyen terme"
+
+[node name="Agenda" type="Button" parent="EveryThing/OptionsContainer/OptionR"]
+layout_mode = 2
+text = "Agenda"
+
+[node name="Parameter" type="Button" parent="EveryThing/OptionsContainer/OptionR"]
+layout_mode = 2
+text = "Para"
+
+[node name="User_interface" type="HBoxContainer" parent="EveryThing"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="EveryThing/OptionsContainer/OptionR/PlanifDetail" to="." method="_on_planif_detail_pressed"]

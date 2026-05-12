@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://m116jqqo7xhb"]
+
+[node name="PanelContainer" type="PanelContainer" unique_id=1583154143]
+visible = false
+custom_minimum_size = Vector2(700, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.845276
+offset_top = -12.016251
+offset_right = 11.845276
+offset_bottom = 12.016251
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=720603880]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1624310513]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Bienvenu dans PlanificA+"
+horizontal_alignment = 1

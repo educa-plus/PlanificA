@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://r3fa16e2mf6u"]
+
+[ext_resource type="Texture2D" uid="uid://c13ie5mfoj85t" path="res://_theme/_assets/calendar-panel.png" id="1_i6mk0"]
+[ext_resource type="Script" uid="uid://ixs2o0jr6jjg" path="res://addons/tooltips_pro/scripts/tooltip_template.gd" id="2_lx5vp"]
+[ext_resource type="Texture2D" uid="uid://fhhp8kkudq6l" path="res://_theme/_assets/optionbutton-radio-selected.png" id="3_i6mk0"]
+[ext_resource type="StyleBox" uid="uid://c2a0e1tu4ajov" path="res://addons/tooltips_pro/examples/resources/styles/LockBorderStyleBoxFlat.tres" id="4_i6mk0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xg5g6"]
+texture = ExtResource("1_i6mk0")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+
+[node name="TooltipTemplateDefault" type="PanelContainer" node_paths=PackedStringArray("content_labels", "lock_elements", "timer_lock_progress_bar") groups=["tooltips"]]
+z_index = 1
+custom_minimum_size = Vector2(64, 0)
+offset_right = 118.0
+offset_bottom = 39.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_xg5g6")
+script = ExtResource("2_lx5vp")
+content_labels = [NodePath("MarginContainer/RichTextLabel")]
+lock_elements = [NodePath("LockBorderPanel")]
+timer_lock_progress_bar = NodePath("Control/TimerLockTextureProgressBar")
+use_tween_in = true
+pop_scale = Vector2(1.1, 1.1)
+use_tween_out = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="LockBorderPanel" type="Panel" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("4_i6mk0")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="TimerLockTextureProgressBar" type="TextureProgressBar" parent="Control"]
+layout_mode = 2
+offset_left = -5.0
+offset_top = -9.0
+offset_right = 9.0
+offset_bottom = 5.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+mouse_filter = 2
+max_value = 1.0
+step = 0.01
+fill_mode = 4
+texture_progress = ExtResource("3_i6mk0")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

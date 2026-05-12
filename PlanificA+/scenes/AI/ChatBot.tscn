@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0gwkukpeg3m0"]
+
+[ext_resource type="Script" uid="uid://bkxkqbrw726l4" path="res://scenes/AI/chat_bot.gd" id="1_paiqy"]
+
+[sub_resource type="NobodyWhoSampler" id="NobodyWhoSampler_paiqy"]
+
+[node name="ChatBot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_paiqy")
+
+[node name="NobodyWhoChat" type="NobodyWhoChat" parent="." node_paths=PackedStringArray("model_node")]
+model_node = NodePath("../NobodyWhoModel")
+sampler = SubResource("NobodyWhoSampler_paiqy")
+system_prompt = "Votre nom est Socrate. Vous êtes un philosophe spécialisé dans l'éducation. Vous utilisez vos connaissances pour aider ceux qui vous parle. Vous n'hésitez pas à partager des faits intéressants sur l'éducation. Vous répondez de façon polie et professionnelle. Vous faites des phrases claires et concises. En général, vous êtes une personne qui s'exprime avec peu de mots et toujours en français. Quand vous ne savez pas la réponse à une question, vous répondez : Tout ce que je sais c'est que je ne sais rien. "
+
+[node name="NobodyWhoModel" type="NobodyWhoModel" parent="."]
+model_path = "addons/nobodywho/mistral-7b-instruct-v0.2.Q4_K_S.gguf"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ChatResponse" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[connection signal="response_finished" from="NobodyWhoChat" to="." method="_on_nobody_who_chat_response_finished"]
+[connection signal="response_updated" from="NobodyWhoChat" to="." method="_on_nobody_who_chat_response_updated"]
+[connection signal="text_submitted" from="PanelContainer/MarginContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]

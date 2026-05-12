@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TutorialStepData" format=3 uid="uid://b3qsqhgtv22qa"]
+
+[ext_resource type="Script" uid="uid://j23ms4k1w07v" path="res://Tutorial/tutorial_step_resource.gd" id="1_am0t5"]
+
+[resource]
+script = ExtResource("1_am0t5")
+tutorial_text_indication = "Voici le générateur, grâce à lui, tous vos cours seront inscrits aux bons moments dans l'agenda, et ce, pour l'année entière !"
+rbutton_text = "C'est compris !"
+tutorial_node_name = "Setter"
+trigger_node_name = "TutoRButton"
+is_shader_circular = false
+is_two_button = false
+metadata/_custom_type_script = "uid://j23ms4k1w07v"

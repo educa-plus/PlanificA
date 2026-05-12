@@ -1,0 +1,142 @@
+[gd_resource type="Theme" load_steps=25 format=3 uid="uid://baqb0o1ofndbm"]
+
+[ext_resource type="Texture2D" uid="uid://v0f40yeqydic" path="res://assets/calendar-panel.png" id="1_14jeo"]
+[ext_resource type="Texture2D" uid="uid://rrxe7butmlaj" path="res://assets/lineedit-enabled.png" id="1_eo8dh"]
+[ext_resource type="Texture2D" uid="uid://b73fd2ckpql4s" path="res://assets/lineedit-disabled.png" id="1_u54w3"]
+[ext_resource type="Texture2D" uid="uid://jh3m6fpf1nbv" path="res://assets/checkbox-checked2.png" id="1_uiurt"]
+[ext_resource type="Texture2D" uid="uid://bjekccahnkys3" path="res://assets/checkbutton-enabled.png" id="1_v28bn"]
+[ext_resource type="Texture2D" uid="uid://l14tjcd248d5" path="res://assets/checkbutton-disabled.png" id="2_sva4s"]
+[ext_resource type="Texture2D" uid="uid://bf4e2etb4kibn" path="res://assets/checkbox-unchecked.png" id="2_y0pdi"]
+[ext_resource type="Texture2D" uid="uid://djwydsowntgug" path="res://assets/textedit-active.png" id="6_ch6eq"]
+[ext_resource type="Texture2D" uid="uid://cn11ffp5kfm30" path="res://assets/optionbutton-closed.png" id="7_bolsf"]
+[ext_resource type="Texture2D" uid="uid://glmcvmxaqwej" path="res://assets/textedit-disabled.png" id="7_t3h0g"]
+[ext_resource type="Texture2D" uid="uid://bk2ne2v78q0lq" path="res://assets/optionbutton-panel.png" id="8_0xnbh"]
+
+[sub_resource type="FontFile" id="FontFile_eo8dh"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bev3j"]
+texture = ExtResource("1_eo8dh")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7tonq"]
+texture = ExtResource("1_u54w3")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x5o7v"]
+texture = ExtResource("1_u54w3")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v28bn"]
+texture = ExtResource("1_u54w3")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bi6iu"]
+texture = ExtResource("7_bolsf")
+texture_margin_left = 16.0
+texture_margin_right = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o42l3"]
+texture = ExtResource("8_0xnbh")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u54w3"]
+texture = ExtResource("1_14jeo")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+region_rect = Rect2(-0.289337, 0.157934, 80.5665, 79.4732)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eo8dh"]
+texture = ExtResource("1_14jeo")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uiurt"]
+texture = ExtResource("6_ch6eq")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y0pdi"]
+texture = ExtResource("7_t3h0g")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bolsf"]
+texture = ExtResource("7_t3h0g")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0xnbh"]
+texture = ExtResource("7_t3h0g")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+
+[resource]
+CheckBox/colors/font_color = Color(0.118582, 0.118581, 0.118581, 1)
+CheckBox/colors/font_disabled_color = Color(0.118582, 0.118581, 0.118581, 0.5)
+CheckBox/colors/font_focus_color = Color(0.118581, 0.118582, 0.118582, 1)
+CheckBox/colors/font_hover_color = Color(0.118581, 0.118582, 0.118582, 1)
+CheckBox/colors/font_hover_pressed_color = Color(0.118581, 0.118581, 0.118581, 1)
+CheckBox/colors/font_pressed_color = Color(0.118581, 0.118581, 0.118581, 1)
+CheckBox/icons/checked = ExtResource("1_uiurt")
+CheckBox/icons/unchecked = ExtResource("2_y0pdi")
+CheckBox/styles/panel = null
+CheckButton/colors/font_color = Color(0.118581, 0.118581, 0.118581, 1)
+CheckButton/colors/font_disabled_color = Color(0.118582, 0.118581, 0.118581, 0.5)
+CheckButton/colors/font_focus_color = Color(0.118581, 0.118582, 0.118582, 1)
+CheckButton/colors/font_hover_color = Color(0.118581, 0.118582, 0.118582, 1)
+CheckButton/colors/font_hover_pressed_color = Color(0.118581, 0.118581, 0.118581, 1)
+CheckButton/colors/font_pressed_color = Color(0.118581, 0.118581, 0.118581, 1)
+CheckButton/icons/checked = ExtResource("1_v28bn")
+CheckButton/icons/checked_disabled = ExtResource("2_sva4s")
+CheckButton/icons/unchecked = ExtResource("2_sva4s")
+LineEdit/colors/font_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_placeholder_color = Color(0, 0, 0, 0.6)
+LineEdit/colors/font_uneditable_color = Color(0, 0, 0, 0.5)
+LineEdit/fonts/font = SubResource("FontFile_eo8dh")
+LineEdit/styles/focus = SubResource("StyleBoxTexture_bev3j")
+LineEdit/styles/normal = SubResource("StyleBoxTexture_7tonq")
+LineEdit/styles/panel = SubResource("StyleBoxTexture_x5o7v")
+LineEdit/styles/read_only = SubResource("StyleBoxTexture_v28bn")
+OptionButton/styles/normal = SubResource("StyleBoxTexture_bi6iu")
+OptionButton/styles/panel = SubResource("StyleBoxTexture_o42l3")
+Panel/styles/panel = SubResource("StyleBoxTexture_u54w3")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_eo8dh")
+TextEdit/styles/focus = SubResource("StyleBoxTexture_uiurt")
+TextEdit/styles/normal = SubResource("StyleBoxTexture_y0pdi")
+TextEdit/styles/panel = SubResource("StyleBoxTexture_bolsf")
+TextEdit/styles/read_only = SubResource("StyleBoxTexture_0xnbh")

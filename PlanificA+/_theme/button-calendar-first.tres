@@ -1,0 +1,48 @@
+[gd_resource type="Theme" format=3 uid="uid://c0mqqrd1xpx5c"]
+
+[ext_resource type="FontFile" uid="uid://ft0jxjjuj8nk" path="res://_theme/_fonts/NotoSans-Medium.ttf" id="1_141l1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3j3ox"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ly2o3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_141l1"]
+bg_color = Color(0.843184, 0.843184, 0.843184, 1)
+border_width_left = 4
+border_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufeb3"]
+bg_color = Color(0.94902, 0.94902, 0.94902, 1)
+border_width_left = 4
+border_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wvne0"]
+bg_color = Color(0.703808, 0.703808, 0.703809, 1)
+border_width_left = 4
+border_color = Color(0.0768358, 0.0768358, 0.0768358, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[resource]
+Button/colors/font_color = Color(0.2, 0.2, 0.2, 1)
+Button/colors/font_focus_color = Color(0.2, 0.2, 0.2, 1)
+Button/colors/font_hover_color = Color(0.2, 0.2, 0.2, 1)
+Button/colors/font_hover_pressed_color = Color(0.2, 0.2, 0.2, 1)
+Button/colors/font_pressed_color = Color(0.2, 0.2, 0.2, 1)
+Button/font_sizes/font_size = 12
+Button/fonts/font = ExtResource("1_141l1")
+Button/styles/disabled = SubResource("StyleBoxEmpty_3j3ox")
+Button/styles/focus = SubResource("StyleBoxEmpty_ly2o3")
+Button/styles/hover = SubResource("StyleBoxFlat_141l1")
+Button/styles/normal = SubResource("StyleBoxFlat_ufeb3")
+Button/styles/pressed = SubResource("StyleBoxFlat_wvne0")

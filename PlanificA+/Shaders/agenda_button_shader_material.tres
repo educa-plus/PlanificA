@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cfxnwoq32llhd"]
+
+[ext_resource type="Shader" uid="uid://cdifdu0rv0my4" path="res://Shaders/agenda_button_shader_material.gdshader" id="1_l7ykq"]
+
+[resource]
+shader = ExtResource("1_l7ykq")
+shader_parameter/color_start = Color(1, 0, 0, 1)
+shader_parameter/color_end = Color(0, 0, 1, 1)
+shader_parameter/gradient_angle = 0.0

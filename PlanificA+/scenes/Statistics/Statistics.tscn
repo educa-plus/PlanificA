@@ -1,0 +1,239 @@
+[gd_scene format=3 uid="uid://dyvkpc041bn0a"]
+
+[ext_resource type="Script" uid="uid://d1hura5ik4bl4" path="res://scenes/Statistics/bar_chart.gd" id="1_2oyxk"]
+[ext_resource type="Script" uid="uid://bmts7pcma4o4v" path="res://scenes/Statistics/statistics.gd" id="1_fdo2d"]
+[ext_resource type="PackedScene" uid="uid://dsxlbg81txii3" path="res://scenes/Statistics/TagCloud/tag_cloud.tscn" id="2_xqpkt"]
+[ext_resource type="PackedScene" uid="uid://cm4npkgw3ylck" path="res://scenes/Statistics/YearChart/retroaction_chart.tscn" id="3_o3l4f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2oyxk"]
+
+[node name="Statistics" type="Control" unique_id=1430372953]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fdo2d")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1904830984]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="BarChart" type="PanelContainer" parent="VBoxContainer" unique_id=1850064937]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("1_2oyxk")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/BarChart" unique_id=71843140]
+layout_mode = 2
+
+[node name="Stars" type="VBoxContainer" parent="VBoxContainer/BarChart/HBoxContainer2" unique_id=1166402135]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Heading" type="Label" parent="VBoxContainer/BarChart/HBoxContainer2/Stars" unique_id=1851289084]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Satistiques rétroaction (année)"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/BarChart/HBoxContainer2/Stars" unique_id=230005682]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2oyxk")
+
+[node name="objectifs" type="HBoxContainer" parent="VBoxContainer/BarChart/HBoxContainer2/Stars" unique_id=1979887505]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/BarChart/HBoxContainer2/Stars/objectifs" unique_id=734606719]
+layout_mode = 2
+text = "Objectifs d'apprentissage"
+
+[node name="learning_objective" type="ProgressBar" parent="VBoxContainer/BarChart/HBoxContainer2/Stars/objectifs" unique_id=2114292432]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 26)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 10
+max_value = 220.0
+
+[node name="Gestion" type="HBoxContainer" parent="VBoxContainer/BarChart/HBoxContainer2/Stars" unique_id=643223764]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/BarChart/HBoxContainer2/Stars/Gestion" unique_id=39290490]
+layout_mode = 2
+text = "Gestion de classe"
+
+[node name="classroom_management" type="ProgressBar" parent="VBoxContainer/BarChart/HBoxContainer2/Stars/Gestion" unique_id=1668640978]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 26)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 10
+max_value = 220.0
+
+[node name="Motivation" type="HBoxContainer" parent="VBoxContainer/BarChart/HBoxContainer2/Stars" unique_id=647354906]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/BarChart/HBoxContainer2/Stars/Motivation" unique_id=592808152]
+layout_mode = 2
+text = "Motivation"
+
+[node name="motivation" type="ProgressBar" parent="VBoxContainer/BarChart/HBoxContainer2/Stars/Motivation" unique_id=299542619]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 26)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 10
+max_value = 220.0
+
+[node name="Relation" type="HBoxContainer" parent="VBoxContainer/BarChart/HBoxContainer2/Stars" unique_id=30374502]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/BarChart/HBoxContainer2/Stars/Relation" unique_id=756114726]
+layout_mode = 2
+text = "Relations positives"
+
+[node name="positive_relations" type="ProgressBar" parent="VBoxContainer/BarChart/HBoxContainer2/Stars/Relation" unique_id=1837490326]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 26)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 10
+max_value = 220.0
+
+[node name="Preparation" type="HBoxContainer" parent="VBoxContainer/BarChart/HBoxContainer2/Stars" unique_id=1463419501]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/BarChart/HBoxContainer2/Stars/Preparation" unique_id=302474704]
+layout_mode = 2
+text = "Préparation"
+
+[node name="preparation" type="ProgressBar" parent="VBoxContainer/BarChart/HBoxContainer2/Stars/Preparation" unique_id=1202371451]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 26)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 10
+max_value = 220.0
+
+[node name="Moyenne" type="HBoxContainer" parent="VBoxContainer/BarChart/HBoxContainer2/Stars" unique_id=133342029]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/BarChart/HBoxContainer2/Stars/Moyenne" unique_id=295055118]
+layout_mode = 2
+text = "Moyenne"
+
+[node name="average" type="ProgressBar" parent="VBoxContainer/BarChart/HBoxContainer2/Stars/Moyenne" unique_id=592920889]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 26)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 10
+max_value = 220.0
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/BarChart/HBoxContainer2" unique_id=1718449600]
+layout_mode = 2
+
+[node name="YearEvolution" type="VBoxContainer" parent="VBoxContainer/BarChart/HBoxContainer2" unique_id=457403799]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AnnualRetroaction" parent="VBoxContainer/BarChart/HBoxContainer2/YearEvolution" unique_id=1358372611 instance=ExtResource("3_o3l4f")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TotalLabel" type="Label" parent="VBoxContainer/BarChart/HBoxContainer2/YearEvolution" unique_id=1820581906]
+visible = false
+layout_mode = 2
+text = "Nombre total de rétroaction = n / t"
+
+[node name="Commentary" type="HBoxContainer" parent="VBoxContainer" unique_id=1993397412]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="Bad" type="PanelContainer" parent="VBoxContainer/Commentary" unique_id=117706291]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Commentary/Bad" unique_id=1231953492]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Commentary/Bad/VBoxContainer" unique_id=271104398]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "Mauvais coups"
+horizontal_alignment = 1
+
+[node name="BadCloud" parent="VBoxContainer/Commentary/Bad/VBoxContainer" unique_id=1203341723 instance=ExtResource("2_xqpkt")]
+layout_mode = 2
+
+[node name="Good" type="PanelContainer" parent="VBoxContainer/Commentary" unique_id=292909162]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Commentary/Good" unique_id=2106595873]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Commentary/Good/VBoxContainer" unique_id=553800638]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "Bons coups"
+horizontal_alignment = 1
+
+[node name="GoodCloud" parent="VBoxContainer/Commentary/Good/VBoxContainer" unique_id=229532377 instance=ExtResource("2_xqpkt")]
+layout_mode = 2
+text_to_cloud = "stratégie"
+
+[node name="Amelioration" type="PanelContainer" parent="VBoxContainer/Commentary" unique_id=632698815]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Commentary/Amelioration" unique_id=1707935655]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Commentary/Amelioration/VBoxContainer" unique_id=909330455]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "Pistes d'amélioration"
+horizontal_alignment = 1
+
+[node name="AmeliorationCloud" parent="VBoxContainer/Commentary/Amelioration/VBoxContainer" unique_id=1472372501 instance=ExtResource("2_xqpkt")]
+layout_mode = 2
+text_to_cloud = ""
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=1363404749]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer" unique_id=1721063516]
+layout_mode = 2
+
+[node name="Refresh" type="Button" parent="VBoxContainer/PanelContainer/HBoxContainer" unique_id=10256176]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Actualiser les statistiques"
+icon_alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer" unique_id=104149341]
+layout_mode = 2
+text = "Statistiques du [date]"
+
+[node name="Button" type="Button" parent="VBoxContainer/PanelContainer/HBoxContainer" unique_id=589509167]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Exporter rapport"

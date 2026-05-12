@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsxlbg81txii3"]
+
+[ext_resource type="Script" uid="uid://cis7i21yi6a2w" path="res://scenes/Statistics/TagCloud/tag_cloud.gd" id="1_3f1bu"]
+
+[node name="TagCloud" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3f1bu")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1

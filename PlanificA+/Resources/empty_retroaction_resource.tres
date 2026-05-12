@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="SaveRetroactionData" format=3 uid="uid://688u2tl5bbyb"]
+
+[ext_resource type="Script" uid="uid://y1lhcllyuj2n" path="res://Resources/save_retroaction_data.gd" id="1_5vw6w"]
+
+[resource]
+script = ExtResource("1_5vw6w")
+metadata/_custom_type_script = "uid://y1lhcllyuj2n"
