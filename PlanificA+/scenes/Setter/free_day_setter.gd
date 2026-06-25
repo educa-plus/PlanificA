@@ -79,6 +79,7 @@ func _populate_calendar(date):
 				
 				var date_button: Button
 				date_button = Button.new()
+				date_button.mouse_filter = Control.MOUSE_FILTER_STOP
 				if typeof(day) != TYPE_DICTIONARY:
 					date_button.text = ""
 				else:
@@ -179,6 +180,7 @@ func _update_sequence_message():
 			
 
 func _on_date_pressed(button, date):
+	print(current_state)
 	match current_state:
 		SequenceState.IDLE:
 			pass
