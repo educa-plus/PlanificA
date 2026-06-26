@@ -17,7 +17,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="PlanificA+"
 config/description="PlanificA+ est un logiciel de gestion conçue pour les enseignants du Québec, notamment afin de répondre aux besoins spécifiques du système scolaire québécois tel que les horaires cycliques et l'aspect séquentiel des cours. Il permet de planifier et d'organiser des cours de manière détaillée et flexible.
 PlanificA+ est une intiative open source. Il est gratuit et n'importe qui peut contribuer à son évolution, que ce soit par des commentaires constructifs, en proposant des amélioration du code ou en contribuant financièrement."
-config/version="0.2.1.0"
+config/version="0.2.1.1"
 run/main_scene="uid://bo7r3oe1fdgli"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/image="uid://ds6epko8kwq3w"
