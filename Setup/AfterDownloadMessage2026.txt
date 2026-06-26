@@ -1,0 +1,25 @@
+======================================================================
+Merci d'avoir installé PlanificA+ !
+======================================================================
+
+PlanificA+ est un logiciel de gestion conçu spécifiquement pour les 
+enseignants du Québec. Grâce à la prise en charge des horaires 
+cycliques et de l'aspect séquentiel des cours, il s'adapte 
+parfaitement aux réalités de notre système scolaire.
+
+Puisqu'il s'agit d'une initiative entièrement gratuite et open source, 
+votre participation est le moteur de son évolution !
+
+----------------------------------------------------------------------
+Besoin d'aide ou envie de contribuer ?
+----------------------------------------------------------------------
+
+• Vous rencontrez un problème technique ou un bug ?
+• Vous avez des suggestions pour améliorer l'application ?
+• Vous souhaitez proposer des améliorations du code ou faire un don ?
+
+Rejoignez notre communauté et contactez-nous dès maintenant :
+
+👉 Rejoindre notre serveur Discord : https://discord.gg/VdP47ZV3BY
+
+Merci pour votre soutien et bonne planification !

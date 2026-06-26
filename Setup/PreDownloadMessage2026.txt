@@ -1,0 +1,10 @@
+Bienvenue dans l'assistant d'installation de PlanificA+ !
+
+Avant de poursuivre, veuillez vous assurer que :
+• Votre ordinateur utilise le système d'exploitation Windows (64-bit).
+• Vous disposez d'environ 150 Mo d'espace disque disponible.
+
+Note importante pour la mise à jour :
+Si vous installez une nouvelle version de PlanificA+, vos données et planifications existantes seront conservées. Par mesure de prudence, il est toutefois recommandé de fermer le logiciel si celui-ci est actuellement ouvert.
+
+Cliquez sur "Suivant" pour commencer l'installation.
