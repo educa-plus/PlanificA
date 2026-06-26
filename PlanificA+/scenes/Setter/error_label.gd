@@ -9,6 +9,7 @@ var follow = false
 func _ready():
 	# Ensure the label is hidden initially by setting its alpha to 0
 	# (You might have already set this in the Inspector, but this confirms it)
+	self.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	modulate.a = 0.0
 	# Also hide the node itself when not displaying a message
 	hide()
