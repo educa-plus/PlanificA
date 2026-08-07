@@ -1,0 +1,72 @@
+name: Publier et Signer la Release PlanificA+
+
+on:
+  push:
+    tags:
+      - 'v*' # S'exécute automatiquement dès que vous poussez un tag comme v1.0.0
+
+jobs:
+  build-and-sign:
+    runs-on: windows-latest
+    permissions:
+      id-token: write
+      contents: write
+
+    steps:
+      - name: Extraire le code du dépôt
+        uses: actions/checkout@v4
+
+      # -------------------------------------------------------------
+      # Étape 1 : Compilation du projet Godot 4
+      # -------------------------------------------------------------
+      - name: Exporter l'application Godot
+        uses: firebelley/godot-export@v6
+        with:
+          godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/4.2.2/Godot_v4.2.2-stable_win64.exe.zip
+          godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/4.2.2/Godot_v4.2.2-stable_export_templates.tpz
+          relative_project_path: ./
+          archive_output: false
+
+      # -------------------------------------------------------------
+      # Étape 2 : Créer l'installateur avec Inno Setup (.iss)
+      # -------------------------------------------------------------
+      - name: Compiler le script Inno Setup (.iss)
+        uses: InnoSetup/action-setup-inno-setup@v2
+        with:
+          filepath: './installer/planifica_setup.iss' # Remplacez par le chemin exact vers votre fichier .iss
+
+      # -------------------------------------------------------------
+      # Étape 3 : Authentification à Azure
+      # -------------------------------------------------------------
+      - name: Connexion à Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          allow-no-subscriptions: true
+          client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
+
+      # -------------------------------------------------------------
+      # Étape 4 : Signature de l'installateur généré avec Azure
+      # -------------------------------------------------------------
+      - name: Signer l'installateur .exe avec Azure Trusted Signing
+        uses: azure/artifact-signing-action@v1
+        with:
+          endpoint: https://eus.codesigning.azure.net/ # Ajustez la région selon votre compte Azure
+          signing-account-name: 'NomDeVotreCompteDeSignature' # Remplacez par le nom de votre compte de signature Azure
+          certificate-profile-name: 'NomDeVotreProfilDeCertificat' # Remplacez par le nom de votre profil (ex: ProfilPublicPlanificA)
+          files-folder: '${{ github.workspace }}/installer/Output' # Chemin vers le dossier contenant le setup.exe généré
+          files-folder-filter: 'exe'
+          file-digest: 'SHA256'
+          timestamp-rfc3161: 'http://timestamp.acs.microsoft.com'
+          timestamp-digest: 'SHA256'
+
+      # -------------------------------------------------------------
+      # Étape 5 : Publication automatique de la Release sur GitHub
+      # -------------------------------------------------------------
+      - name: Créer la Release GitHub et attacher le fichier signé
+        uses: softprops/action-gh-release@v2
+        with:
+          files: installer/Output/*.exe # Remplacez par le chemin/nom exact de votre installateur généré
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
